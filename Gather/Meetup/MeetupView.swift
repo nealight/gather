@@ -6,8 +6,18 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MeetupView: View {
+    @State private var region = MKCoordinateRegion(
+                    center: CLLocationCoordinate2D(
+                        latitude: 42.4534,
+                        longitude: -76.4735),
+                    span: MKCoordinateSpan(
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03)
+                    )
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
@@ -19,6 +29,8 @@ struct MeetupView: View {
                 
                 ProfileView()
             }.padding()
+            
+            Map(coordinateRegion: $region)
             
             Spacer()
         }
