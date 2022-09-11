@@ -34,15 +34,17 @@ struct SignInView: View {
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
                 
-                Button("Sign In", action: {
+                Button(action: {
                     loggedIn = true
-                })
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 220, height: 60)
-                    .background(.blue)
-                    .cornerRadius(15.0)
+                }) {
+                    Text("Sign In")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 60)
+                        .background(.blue)
+                        .cornerRadius(15.0)
+                }
                     .fullScreenCover(isPresented: $loggedIn, content: {MeetupView()})
                 
                 Spacer()
