@@ -10,17 +10,9 @@ import MapKit
 
 struct CentralMapView: View {
     @StateObject private var viewModel = CentralMapViewModel()
-    @State private var region = MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(
-                        latitude: 42.4534,
-                        longitude: -76.4735),
-                    span: MKCoordinateSpan(
-                        latitudeDelta: 0.03,
-                        longitudeDelta: 0.03)
-                    )
     
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
             .cornerRadius(15.0)
             .padding()
             .onAppear(perform: viewModel.checkLocationAuthorization)
