@@ -45,8 +45,10 @@ struct SignInView: View {
                     .cornerRadius(15.0)
                     .fullScreenCover(isPresented: $loggedIn, content: {MeetupView()})
                 
+                Spacer()
             }.padding()
         
+            
         }
 }
 

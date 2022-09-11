@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C961ED828CE432F0090D399 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961ED728CE432F0090D399 /* SignInView.swift */; };
 		1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EDA28CE46C10090D399 /* MeetupView.swift */; };
+		1C961EDF28CE65900090D399 /* GatherMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EDE28CE65900090D399 /* GatherMapViewModel.swift */; };
+		1C961EE128CE65A30090D399 /* GatherMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EE028CE65A30090D399 /* GatherMapView.swift */; };
 		1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692C28CD707200F66A26 /* GatherApp.swift */; };
 		1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692E28CD707200F66A26 /* SignUpView.swift */; };
 		1CB3693128CD707500F66A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB3693028CD707500F66A26 /* Assets.xcassets */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		1C961ED728CE432F0090D399 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1C961EDA28CE46C10090D399 /* MeetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupView.swift; sourceTree = "<group>"; };
+		1C961EDE28CE65900090D399 /* GatherMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherMapViewModel.swift; sourceTree = "<group>"; };
+		1C961EE028CE65A30090D399 /* GatherMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherMapView.swift; sourceTree = "<group>"; };
+		1C961EE228CE67150090D399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1CB3692928CD707200F66A26 /* Gather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB3692C28CD707200F66A26 /* GatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherApp.swift; sourceTree = "<group>"; };
 		1CB3692E28CD707200F66A26 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -103,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				1C961EDA28CE46C10090D399 /* MeetupView.swift */,
+				1C961EDE28CE65900090D399 /* GatherMapViewModel.swift */,
+				1C961EE028CE65A30090D399 /* GatherMapView.swift */,
 			);
 			path = Meetup;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 		1CB3692B28CD707200F66A26 /* Gather */ = {
 			isa = PBXGroup;
 			children = (
+				1C961EE228CE67150090D399 /* Info.plist */,
 				1C961ED928CE46860090D399 /* Meetup */,
 				1C961ED628CE42DD0090D399 /* Onboarding */,
 				1C961ED528CE429A0090D399 /* Service */,
@@ -303,10 +311,12 @@
 			files = (
 				1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */,
 				1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */,
+				1C961EE128CE65A30090D399 /* GatherMapView.swift in Sources */,
 				1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */,
 				1CB3695728CD747000F66A26 /* UserService.swift in Sources */,
 				1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */,
 				1C961ED828CE432F0090D399 /* SignInView.swift in Sources */,
+				1C961EDF28CE65900090D399 /* GatherMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +478,8 @@
 				DEVELOPMENT_TEAM = DDF2RRVJ39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +509,8 @@
 				DEVELOPMENT_TEAM = DDF2RRVJ39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
