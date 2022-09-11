@@ -11,7 +11,7 @@ import SwiftUI
 struct GatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignUpView()
         }
     }
 }

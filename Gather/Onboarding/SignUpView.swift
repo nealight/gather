@@ -1,5 +1,4 @@
 //
-//  ContentView.swift
 //  Gather
 //
 //  Created by Yi Xu on 9/10/22.
@@ -9,12 +8,15 @@ import SwiftUI
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
 
-struct ContentView: View {
+struct SignUpView: View {
     
     @State var username: String = ""
     @State var password: String = ""
     
+    @State var signUpUser = false
+    
     var body: some View {
+        NavigationView {
             VStack {
                 Text("Join Gather")
                                 .font(.largeTitle)
@@ -42,13 +44,21 @@ struct ContentView: View {
                                 .background(.blue)
                                 .cornerRadius(15.0)
                 }
+                
+                NavigationLink(destination: SignInView(), isActive: $signUpUser) {
+                    Button(action: {signUpUser = true}) {
+                        Text("Sign In Instead")
+                                    .font(.headline)
+                                    .padding()
+                    }
+                }
             }.padding()
-        
         }
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignUpView()
     }
 }

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C961ED828CE432F0090D399 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961ED728CE432F0090D399 /* SignInView.swift */; };
 		1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692C28CD707200F66A26 /* GatherApp.swift */; };
-		1CB3692F28CD707200F66A26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692E28CD707200F66A26 /* ContentView.swift */; };
+		1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692E28CD707200F66A26 /* SignUpView.swift */; };
 		1CB3693128CD707500F66A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB3693028CD707500F66A26 /* Assets.xcassets */; };
 		1CB3693428CD707500F66A26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB3693328CD707500F66A26 /* Preview Assets.xcassets */; };
 		1CB3693E28CD707500F66A26 /* GatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3693D28CD707500F66A26 /* GatherTests.swift */; };
@@ -37,9 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C961ED728CE432F0090D399 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1CB3692928CD707200F66A26 /* Gather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB3692C28CD707200F66A26 /* GatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherApp.swift; sourceTree = "<group>"; };
-		1CB3692E28CD707200F66A26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1CB3692E28CD707200F66A26 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1CB3693028CD707500F66A26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CB3693328CD707500F66A26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1CB3693928CD707500F66A26 /* GatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C961ED528CE429A0090D399 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1CB3695628CD747000F66A26 /* UserService.swift */,
+				1CB3695B28CD76F800F66A26 /* NetworkClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1C961ED628CE42DD0090D399 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1CB3692E28CD707200F66A26 /* SignUpView.swift */,
+				1C961ED728CE432F0090D399 /* SignInView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		1CB3692028CD707200F66A26 = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +120,9 @@
 		1CB3692B28CD707200F66A26 /* Gather */ = {
 			isa = PBXGroup;
 			children = (
-				1CB3695B28CD76F800F66A26 /* NetworkClient.swift */,
+				1C961ED628CE42DD0090D399 /* Onboarding */,
+				1C961ED528CE429A0090D399 /* Service */,
 				1CB3692C28CD707200F66A26 /* GatherApp.swift */,
-				1CB3695628CD747000F66A26 /* UserService.swift */,
-				1CB3692E28CD707200F66A26 /* ContentView.swift */,
 				1CB3693028CD707500F66A26 /* Assets.xcassets */,
 				1CB3693228CD707500F66A26 /* Preview Content */,
 			);
@@ -271,10 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB3692F28CD707200F66A26 /* ContentView.swift in Sources */,
+				1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */,
 				1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */,
 				1CB3695728CD747000F66A26 /* UserService.swift in Sources */,
 				1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */,
+				1C961ED828CE432F0090D399 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
