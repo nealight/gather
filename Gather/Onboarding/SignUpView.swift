@@ -18,11 +18,6 @@ struct SignUpView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Join Gather")
-                                .font(.largeTitle)
-                                .fontWeight(.semibold)
-                                .padding(.bottom, 20)
-                
                 TextField("Username", text: $username)
                                 .padding()
                                 .background(lightGreyColor)
@@ -51,7 +46,7 @@ struct SignUpView: View {
                                     .font(.headline)
                                     .padding()
                     }
-                }
+                }.navigationTitle("Join Gather")
                 
                 Spacer()
             }.padding()
