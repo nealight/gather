@@ -20,13 +20,14 @@ class CentralMapViewModel: ObservableObject {
                         longitudeDelta: 0.03)
                     )
     
-    var locations: [Location] = [
+    @Published var locations: [Location] = [
         // For testing
         Location(coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("sample_profile"))),
         Location(coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileSnapshotView(name: "Big Red", image: Image("sample_profile"))),
     ]
 
     var locationManager = CLLocationManager()
+    
     
     func checkLocationAuthorization() {
         switch locationManager.authorizationStatus {

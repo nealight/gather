@@ -12,9 +12,9 @@ struct CentralMapView: View {
     @StateObject private var viewModel = CentralMapViewModel()
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations, annotationContent: {
-            location in MapAnnotation(coordinate: location.coordinates) {
-                location.image
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: $viewModel.locations, annotationContent: {
+            location in MapAnnotation(coordinate: location.coordinates.wrappedValue) {
+                location.image.wrappedValue
                     .frame(width: 30, height: 30)
             }
         })
