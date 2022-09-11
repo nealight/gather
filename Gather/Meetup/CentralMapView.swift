@@ -8,8 +8,8 @@
 import SwiftUI
 import MapKit
 
-struct GatherMapView: View {
-    @StateObject private var viewModel = GatherMapViewModel()
+struct CentralMapView: View {
+    @StateObject private var viewModel = CentralMapViewModel()
     @State private var region = MKCoordinateRegion(
                     center: CLLocationCoordinate2D(
                         latitude: 42.4534,
@@ -29,6 +29,6 @@ struct GatherMapView: View {
 
 struct GatherMapView_Previews: PreviewProvider {
     static var previews: some View {
-        GatherMapView()
+        CentralMapView()
     }
 }

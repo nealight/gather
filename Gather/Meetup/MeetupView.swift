@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct MeetupView: View {
+    @State private var showProfile = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -19,23 +20,19 @@ struct MeetupView: View {
                 
                 Spacer()
                 
-                ProfileView()
+                ProfileImageView()
+                    .frame(width: 50, height: 50, alignment: .trailing)
+                    .sheet(isPresented: $showProfile, content: {ProfileView()})
+                    .onTapGesture {
+                        showProfile = true
+                    }
+
             }.padding()
             
-            GatherMapView()
+            CentralMapView()
             
             Spacer()
         }
-    }
-}
-
-struct ProfileView: View {
-    var body: some View {
-        Image("sample_profile")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 40, height: 40)
-            .clipShape(Circle())
     }
 }
 

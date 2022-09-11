@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class GatherMapViewModel: ObservableObject {
+class CentralMapViewModel: ObservableObject {
     var locationManager = CLLocationManager()
     
     func checkLocationAuthorization() {
