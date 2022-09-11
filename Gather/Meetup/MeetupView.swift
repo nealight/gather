@@ -9,8 +9,6 @@ import SwiftUI
 
 
 struct MeetupView: View {
-    @State private var showProfile = false
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
@@ -20,12 +18,9 @@ struct MeetupView: View {
                 
                 Spacer()
                 
-                ProfileImageView()
+                ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"))
                     .frame(width: 50, height: 50, alignment: .trailing)
-                    .sheet(isPresented: $showProfile, content: {ProfileView()})
-                    .onTapGesture {
-                        showProfile = true
-                    }
+                
 
             }.padding()
             

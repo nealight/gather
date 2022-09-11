@@ -22,8 +22,8 @@ class CentralMapViewModel: ObservableObject {
     
     var locations: [Location] = [
         // For testing
-        Location(coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileImageView()),
-        Location(coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileImageView()),
+        Location(coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("sample_profile"))),
+        Location(coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileSnapshotView(name: "Big Red", image: Image("sample_profile"))),
     ]
 
     var locationManager = CLLocationManager()

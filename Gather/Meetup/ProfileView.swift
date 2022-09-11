@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ProfileView: View {
+    let name: String
+    let profileImageView: ProfileImageView
     var body: some View {
         NavigationView {
             VStack {
-                ProfileImageView().padding()
+                profileImageView.padding()
                 Spacer()
                 
-            }.navigationBarTitle("John Appleseed", displayMode: .automatic)
+            }.navigationBarTitle(name, displayMode: .automatic)
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(name: "John Appleseed", profileImageView: .init(image: Image("sample_profile")))
     }
 }

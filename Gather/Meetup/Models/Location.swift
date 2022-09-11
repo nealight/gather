@@ -14,5 +14,5 @@ struct Location: Identifiable {
     var id = UUID().uuidString
     
     var coordinates: CLLocationCoordinate2D
-    var image: ProfileImageView
+    var image: ProfileSnapshotView
 }
