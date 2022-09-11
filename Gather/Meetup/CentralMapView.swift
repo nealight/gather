@@ -12,7 +12,12 @@ struct CentralMapView: View {
     @StateObject private var viewModel = CentralMapViewModel()
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: viewModel.locations, annotationContent: {
+            location in MapAnnotation(coordinate: location.coordinates) {
+                location.image
+                    .frame(width: 30, height: 30)
+            }
+        })
             .cornerRadius(15.0)
             .padding()
             .onAppear(perform: viewModel.checkLocationAuthorization)

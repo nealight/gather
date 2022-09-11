@@ -19,6 +19,12 @@ class CentralMapViewModel: ObservableObject {
                         latitudeDelta: 0.03,
                         longitudeDelta: 0.03)
                     )
+    
+    var locations: [Location] = [
+        // For testing
+        Location(coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileImageView()),
+        Location(coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileImageView()),
+    ]
 
     var locationManager = CLLocationManager()
     
@@ -26,21 +32,21 @@ class CentralMapViewModel: ObservableObject {
         switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-            updateRegion()
+            updateUserLocation()
         case .restricted:
             print("Location restricted")
         case .denied:
             print("Location denied")
         case .authorizedAlways:
-            updateRegion()
+            updateUserLocation()
         case .authorizedWhenInUse:
-            updateRegion()
+            updateUserLocation()
         @unknown default:
             break
         }
     }
     
-    private func updateRegion() {
+    private func updateUserLocation() {
         let myLocation = locationManager.location
         
         guard let myLocation = myLocation else {

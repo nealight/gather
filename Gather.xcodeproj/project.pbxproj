@@ -23,6 +23,7 @@
 		1CB3695728CD747000F66A26 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3695628CD747000F66A26 /* UserService.swift */; };
 		1CB3695A28CD76DE00F66A26 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB3695928CD76DE00F66A26 /* Alamofire */; };
 		1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3695B28CD76F800F66A26 /* NetworkClient.swift */; };
+		1CC9009028CE8DA800704D7C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9008F28CE8DA800704D7C /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1CB3694928CD707500F66A26 /* GatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1CB3695628CD747000F66A26 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1CB3695B28CD76F800F66A26 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		1CC9008F28CE8DA800704D7C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				1C961EE028CE65A30090D399 /* CentralMapView.swift */,
 				1C961EE328CE73AC0090D399 /* ProfileImageView.swift */,
 				1C961EE528CE74520090D399 /* ProfileView.swift */,
+				1CC9008F28CE8DA800704D7C /* Location.swift */,
 			);
 			path = Meetup;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */,
+				1CC9009028CE8DA800704D7C /* Location.swift in Sources */,
 				1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */,
 				1C961EE628CE74520090D399 /* ProfileView.swift in Sources */,
 				1C961EE128CE65A30090D399 /* CentralMapView.swift in Sources */,
