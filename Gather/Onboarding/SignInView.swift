@@ -15,6 +15,19 @@ struct SignInView: View {
     @State var password: String = ""
     @State private var loggedIn = false
     
+    @Environment(\.colorScheme) private var colorScheme
+    
+    public var textFieldColor: Color {
+        switch colorScheme {
+            case .light:
+            return lightGreyColor
+            case .dark:
+            return lightGreyColor.opacity(0.2)
+            @unknown default:
+            return lightGreyColor
+        }
+    }
+    
     var body: some View {
             VStack {
                 Text("Welcome back!")
@@ -24,13 +37,13 @@ struct SignInView: View {
                 
                 TextField("Username", text: $username)
                                 .padding()
-                                .background(lightGreyColor)
+                                .background(textFieldColor)
                                 .cornerRadius(5.0)
                                 .padding(.bottom, 20)
                                 
                 SecureField("Password", text: $password)
                     .padding()
-                    .background(lightGreyColor)
+                    .background(textFieldColor)
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
                 
