@@ -38,13 +38,13 @@ struct SignInView: View {
                 TextField("Username", text: $username)
                                 .padding()
                                 .background(textFieldColor)
-                                .cornerRadius(5.0)
+                                .cornerRadius(10.0)
                                 .padding(.bottom, 20)
                                 
                 SecureField("Password", text: $password)
                     .padding()
                     .background(textFieldColor)
-                    .cornerRadius(5.0)
+                    .cornerRadius(10.0)
                     .padding(.bottom, 20)
                 
                 Button(action: {
