@@ -13,6 +13,8 @@
 		1C961EE128CE65A30090D399 /* CentralMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EE028CE65A30090D399 /* CentralMapView.swift */; };
 		1C961EE428CE73AC0090D399 /* ProfileSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EE328CE73AC0090D399 /* ProfileSnapshotView.swift */; };
 		1C961EE628CE74520090D399 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C961EE528CE74520090D399 /* ProfileView.swift */; };
+		1C99C23D28D1138500CA6795 /* ProfileImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99C23C28D1138500CA6795 /* ProfileImageService.swift */; };
+		1C99C23F28D1146C00CA6795 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99C23E28D1146C00CA6795 /* NetworkError.swift */; };
 		1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692C28CD707200F66A26 /* GatherApp.swift */; };
 		1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3692E28CD707200F66A26 /* SignUpView.swift */; };
 		1CB3693128CD707500F66A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB3693028CD707500F66A26 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		1C961EE228CE67150090D399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C961EE328CE73AC0090D399 /* ProfileSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSnapshotView.swift; sourceTree = "<group>"; };
 		1C961EE528CE74520090D399 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1C99C23C28D1138500CA6795 /* ProfileImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageService.swift; sourceTree = "<group>"; };
+		1C99C23E28D1146C00CA6795 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		1CB3692928CD707200F66A26 /* Gather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB3692C28CD707200F66A26 /* GatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherApp.swift; sourceTree = "<group>"; };
 		1CB3692E28CD707200F66A26 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 			children = (
 				1CB3695628CD747000F66A26 /* UserService.swift */,
 				1CB3695B28CD76F800F66A26 /* NetworkClient.swift */,
+				1C99C23C28D1138500CA6795 /* ProfileImageService.swift */,
+				1C99C23E28D1146C00CA6795 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 				1CC9009028CE8DA800704D7C /* ActiveUser.swift in Sources */,
 				1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */,
 				1C961EE628CE74520090D399 /* ProfileView.swift in Sources */,
+				1C99C23F28D1146C00CA6795 /* NetworkError.swift in Sources */,
+				1C99C23D28D1138500CA6795 /* ProfileImageService.swift in Sources */,
 				1C961EE128CE65A30090D399 /* CentralMapView.swift in Sources */,
 				1CE1418128D00FAE00085A9F /* PersonalProfileView.swift in Sources */,
 				1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */,

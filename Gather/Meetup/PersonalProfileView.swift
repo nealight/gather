@@ -16,7 +16,9 @@ struct PersonalProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ProfileImageView(image: $personalProfileImageViewModel.profileImage.wrappedValue).padding()
+                ProfileImageView(image: $personalProfileImageViewModel.profileImage.wrappedValue)
+                    .frame(width: 300, height: 300, alignment: .center)
+                    .padding()
                 
                 PhotosPicker(
                     selection: $profilePhotoPickerViewModel.selectedItem,
@@ -31,8 +33,9 @@ struct PersonalProfileView: View {
                             }
                             .onChange(of: profilePhotoPickerViewModel.selectedItem) { newItem in
                                 Task {
-                                    personalProfileImageViewModel.updateProfileImage()
-                                    self.dismiss()
+                                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                        personalProfileImageViewModel.updateProfileImage(data: data)
+                                    }
                                 }
                             }
                 
