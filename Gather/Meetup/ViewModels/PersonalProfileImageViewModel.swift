@@ -10,6 +10,8 @@ import SwiftUI
 
 class PersonalProfileImageViewModel: ObservableObject {
     @State var profileImage: Image = Image("sample_profile")
-    
+    func updateProfileImage() {
+        print("Start updating image to cloud server")
+    }
     
 }

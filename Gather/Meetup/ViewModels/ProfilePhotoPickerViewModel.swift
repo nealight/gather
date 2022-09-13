@@ -10,7 +10,5 @@ import PhotosUI
 import SwiftUI
 
 class ProfilePhotoPickerViewModel: ObservableObject {
-    @State public var selectedItem: PhotosPickerItem? = nil
-    @State public var selectedImageData: Data? = nil
-    
+    @Published public var selectedItem: PhotosPickerItem? = nil
 }

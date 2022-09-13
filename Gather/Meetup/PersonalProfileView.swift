@@ -11,6 +11,7 @@ import PhotosUI
 struct PersonalProfileView: View {
     @StateObject private var profilePhotoPickerViewModel = ProfilePhotoPickerViewModel()
     @StateObject private var personalProfileImageViewModel = PersonalProfileImageViewModel()
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct PersonalProfileView: View {
                     selection: $profilePhotoPickerViewModel.selectedItem,
                             matching: .images,
                             photoLibrary: .shared()) {
-                                Text("Change Profile Photo")
+                                Label("Select a photo", systemImage: "photo")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding()
@@ -30,12 +31,11 @@ struct PersonalProfileView: View {
                             }
                             .onChange(of: profilePhotoPickerViewModel.selectedItem) { newItem in
                                 Task {
-                                    // Retrieve selected asset in the form of Data
-                                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                        profilePhotoPickerViewModel.selectedImageData = data
-                                    }
+                                    personalProfileImageViewModel.updateProfileImage()
+                                    self.dismiss()
                                 }
                             }
+                
                 Spacer()
                 
             }.navigationBarTitle("John Appleseed", displayMode: .automatic)
