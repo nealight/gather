@@ -104,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1E7B5128D12B0700A50197 /* PersonalProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */,
+				1CE1418528D019F700085A9F /* PersonalProfileImageViewModel.swift */,
+				1CE1418028D00FAE00085A9F /* PersonalProfileView.swift */,
+			);
+			path = PersonalProfile;
+			sourceTree = "<group>";
+		};
 		1C961ED528CE429A0090D399 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,13 +137,13 @@
 		1C961ED928CE46860090D399 /* Meetup */ = {
 			isa = PBXGroup;
 			children = (
-				1CE1418228D010C900085A9F /* ViewModels */,
-				1CC9009128CE958E00704D7C /* Models */,
+				1C1E7B5128D12B0700A50197 /* PersonalProfile */,
 				1C961EDA28CE46C10090D399 /* MeetupView.swift */,
+				1CC9008F28CE8DA800704D7C /* ActiveUser.swift */,
+				1C961EDE28CE65900090D399 /* CentralMapViewModel.swift */,
 				1C961EE028CE65A30090D399 /* CentralMapView.swift */,
-				1C961EE328CE73AC0090D399 /* ProfileSnapshotView.swift */,
-				1CE1418028D00FAE00085A9F /* PersonalProfileView.swift */,
 				1C961EE528CE74520090D399 /* ProfileView.swift */,
+				1C961EE328CE73AC0090D399 /* ProfileSnapshotView.swift */,
 				1CE1417828D0056900085A9F /* ProfileImageView.swift */,
 			);
 			path = Meetup;
@@ -196,24 +206,6 @@
 				1CB3694928CD707500F66A26 /* GatherUITestsLaunchTests.swift */,
 			);
 			path = GatherUITests;
-			sourceTree = "<group>";
-		};
-		1CC9009128CE958E00704D7C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1CC9008F28CE8DA800704D7C /* ActiveUser.swift */,
-				1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1CE1418228D010C900085A9F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				1C961EDE28CE65900090D399 /* CentralMapViewModel.swift */,
-				1CE1418528D019F700085A9F /* PersonalProfileImageViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
