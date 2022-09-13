@@ -31,8 +31,9 @@ struct PersonalProfileView: View {
                             }
                             .onChange(of: profilePhotoPickerViewModel.selectedItem) { newItem in
                                 Task {
-                                    personalProfileImageViewModel.updateProfileImage()
-                                    self.dismiss()
+                                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                        personalProfileImageViewModel.updateProfileImage(data: data)
+                                    }
                                 }
                             }
                 
