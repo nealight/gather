@@ -9,23 +9,27 @@ import SwiftUI
 
 
 struct MeetupView: View {
+    @State private var showPersonalProfile = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
                 Text("John Appleseed")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                
                 Spacer()
-                
-                ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"))
+                ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"), profileDetailShowable: false)
                     .frame(width: 50, height: 50, alignment: .trailing)
-                
+                    .sheet(isPresented: $showPersonalProfile, content: {
+                        PersonalProfileView()
+                    })
+                    .onTapGesture {
+                        print("tapped on own personal profile")
+                        showPersonalProfile = true
+                    }
 
             }.padding()
-            
             CentralMapView()
-            
             Spacer()
         }
     }

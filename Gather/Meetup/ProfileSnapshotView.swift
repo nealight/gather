@@ -10,24 +10,34 @@ import SwiftUI
 struct ProfileSnapshotView: View {
     let name: String
     let image: Image
+    let profileDetailShowable: Bool
     @State private var showProfile = false
     
+    
     var body: some View {
-        ProfileImageView(image: image)
-            .sheet(isPresented: $showProfile, content: {ProfileView(name: name,
-                                                                    profileImageView: .init(image: image))})
-            .onTapGesture {
-                showProfile = true
-            }
+        if profileDetailShowable {
+            ProfileImageView(image: image)
+                .sheet(isPresented: $showProfile, content: {
+                    ProfileView(name: name,
+                                profileImageView: .init(image: image))
+                })
+                .onTapGesture {
+                    showProfile = true
+                }
+        } else {
+            ProfileImageView(image: image)
+                .sheet(isPresented: $showProfile, content: {
+                    ProfileView(name: name,
+                                profileImageView: .init(image: image))
+                })
+        }
     }
         
 }
 
-struct ProfileImageView: View {
-    let image: Image
-    var body: some View {
-        image.resizable()
-            .scaledToFit()
-            .clipShape(Circle())
+struct ProfileSnapshotView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"), profileDetailShowable: true)
     }
 }
+

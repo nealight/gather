@@ -10,7 +10,7 @@ import CoreLocation
 import UIKit
 import SwiftUI
 
-struct Location: Identifiable {
+struct ActiveUser: Identifiable {
     var id = UUID().uuidString
     
     var coordinates: CLLocationCoordinate2D
