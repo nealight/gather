@@ -14,7 +14,11 @@ class PersonalProfileImageViewModel: ObservableObject {
     
     private var cancellableSet: Set<AnyCancellable> = []
     
+<<<<<<< HEAD
     private var profileImageService: PersonalProfileImageServiceProtocol = ProfileImageService.shared
+=======
+    private var profileImageService: ProfileImageServiceProtocol = ProfileImageService.shared
+>>>>>>> aa1d7b5a00b066d40a6774c8399a8ac4839afd91
     
     init() {
         profileImageService.personalProfileImageDataPublisher.sink { data in
