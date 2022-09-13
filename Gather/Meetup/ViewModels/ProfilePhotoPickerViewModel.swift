@@ -9,7 +9,7 @@ import Foundation
 import PhotosUI
 import SwiftUI
 
-class PersonalProfileViewModel: ObservableObject {
+class ProfilePhotoPickerViewModel: ObservableObject {
     @State public var selectedItem: PhotosPickerItem? = nil
     @State public var selectedImageData: Data? = nil
     

@@ -9,15 +9,16 @@ import SwiftUI
 import PhotosUI
 
 struct PersonalProfileView: View {
-    @StateObject private var personalProfileViewModel = PersonalProfileViewModel()
+    @StateObject private var profilePhotoPickerViewModel = ProfilePhotoPickerViewModel()
+    @StateObject private var personalProfileImageViewModel = PersonalProfileImageViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                ProfileImageView(image: .init("sample_profile")).padding()
+                ProfileImageView(image: $personalProfileImageViewModel.profileImage.wrappedValue).padding()
                 
                 PhotosPicker(
-                    selection: $personalProfileViewModel.selectedItem,
+                    selection: $profilePhotoPickerViewModel.selectedItem,
                             matching: .images,
                             photoLibrary: .shared()) {
                                 Text("Change Profile Photo")
@@ -27,11 +28,11 @@ struct PersonalProfileView: View {
                                     .background(.blue)
                                     .cornerRadius(15.0)
                             }
-                            .onChange(of: personalProfileViewModel.selectedItem) { newItem in
+                            .onChange(of: profilePhotoPickerViewModel.selectedItem) { newItem in
                                 Task {
                                     // Retrieve selected asset in the form of Data
                                     if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                        personalProfileViewModel.selectedImageData = data
+                                        profilePhotoPickerViewModel.selectedImageData = data
                                     }
                                 }
                             }

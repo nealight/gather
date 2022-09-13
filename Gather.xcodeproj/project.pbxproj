@@ -27,7 +27,8 @@
 		1CE1417928D0056900085A9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1417828D0056900085A9F /* ProfileImageView.swift */; };
 		1CE1417F28D00D9A00085A9F /* PersonalProfileImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */; };
 		1CE1418128D00FAE00085A9F /* PersonalProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1418028D00FAE00085A9F /* PersonalProfileView.swift */; };
-		1CE1418428D010E600085A9F /* PersonalProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1418328D010E600085A9F /* PersonalProfileViewModel.swift */; };
+		1CE1418428D010E600085A9F /* ProfilePhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1418328D010E600085A9F /* ProfilePhotoPickerViewModel.swift */; };
+		1CE1418628D019F700085A9F /* PersonalProfileImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1418528D019F700085A9F /* PersonalProfileImageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +72,8 @@
 		1CE1417828D0056900085A9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileImageModel.swift; sourceTree = "<group>"; };
 		1CE1418028D00FAE00085A9F /* PersonalProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileView.swift; sourceTree = "<group>"; };
-		1CE1418328D010E600085A9F /* PersonalProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewModel.swift; sourceTree = "<group>"; };
+		1CE1418328D010E600085A9F /* ProfilePhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoPickerViewModel.swift; sourceTree = "<group>"; };
+		1CE1418528D019F700085A9F /* PersonalProfileImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				1C961EDE28CE65900090D399 /* CentralMapViewModel.swift */,
-				1CE1418328D010E600085A9F /* PersonalProfileViewModel.swift */,
+				1CE1418328D010E600085A9F /* ProfilePhotoPickerViewModel.swift */,
+				1CE1418528D019F700085A9F /* PersonalProfileImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				1CE1417928D0056900085A9F /* ProfileImageView.swift in Sources */,
 				1CB3692F28CD707200F66A26 /* SignUpView.swift in Sources */,
+				1CE1418628D019F700085A9F /* PersonalProfileImageViewModel.swift in Sources */,
 				1CC9009028CE8DA800704D7C /* ActiveUser.swift in Sources */,
 				1CB3692D28CD707200F66A26 /* GatherApp.swift in Sources */,
 				1C961EE628CE74520090D399 /* ProfileView.swift in Sources */,
@@ -355,7 +359,7 @@
 				1CE1418128D00FAE00085A9F /* PersonalProfileView.swift in Sources */,
 				1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */,
 				1CB3695728CD747000F66A26 /* UserService.swift in Sources */,
-				1CE1418428D010E600085A9F /* PersonalProfileViewModel.swift in Sources */,
+				1CE1418428D010E600085A9F /* ProfilePhotoPickerViewModel.swift in Sources */,
 				1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */,
 				1C961EE428CE73AC0090D399 /* ProfileSnapshotView.swift in Sources */,
 				1C961ED828CE432F0090D399 /* SignInView.swift in Sources */,
