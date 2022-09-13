@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct PersonalProfileView: View {
-    @StateObject private var profilePhotoPickerViewModel = ProfilePhotoPickerViewModel()
+    @State public var selectedItem: PhotosPickerItem? = nil
     @StateObject private var personalProfileImageViewModel = PersonalProfileImageViewModel()
     @Environment(\.dismiss) private var dismiss
     
@@ -21,7 +21,7 @@ struct PersonalProfileView: View {
                     .padding()
                 
                 PhotosPicker(
-                    selection: $profilePhotoPickerViewModel.selectedItem,
+                    selection: $selectedItem,
                             matching: .images,
                             photoLibrary: .shared()) {
                                 Label("Select a photo", systemImage: "photo")
@@ -31,7 +31,7 @@ struct PersonalProfileView: View {
                                     .background(.blue)
                                     .cornerRadius(15.0)
                             }
-                            .onChange(of: profilePhotoPickerViewModel.selectedItem) { newItem in
+                            .onChange(of: selectedItem) { newItem in
                                 Task {
                                     if let data = try? await newItem?.loadTransferable(type: Data.self) {
                                         personalProfileImageViewModel.updateProfileImage(data: data)
