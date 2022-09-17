@@ -68,5 +68,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "361AC2F0-0874-4A16-98D8-3D576280833D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "registerAccount(usernameText:passwordText:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 9ec44089ff0b0e0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.AFError) -&gt; Gather.NetworkError in closure #1 (Alamofire.DataResponse&lt;Gather.SignupResponseModel, Alamofire.AFError&gt;) -&gt; Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt; in Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String) -&gt; Combine.AnyPublisher&lt;Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt;, Swift.Never&gt;"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 465f1b2d13435d92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data) -&gt; Swift.Optional&lt;Gather.BackendError&gt; in closure #1 (Alamofire.AFError) -&gt; Gather.NetworkError in closure #1 (Alamofire.DataResponse&lt;Gather.SignupResponseModel, Alamofire.AFError&gt;) -&gt; Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt; in Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String) -&gt; Combine.AnyPublisher&lt;Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt;, Swift.Never&gt;"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "861A989A-F0B2-44DE-BD38-98EF0493E491"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "registerAccount(usernameText:passwordText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

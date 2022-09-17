@@ -44,28 +44,20 @@ struct SignUpView: View {
                     .cornerRadius(10.0)
                     .padding(.bottom, 20)
                 
-                Button(action: {print("Button tapped")}) {
-                    Text("Register")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 220, height: 60)
-                                .background(.blue)
-                                .cornerRadius(15.0)
-                }
-                
                 NavigationLink(destination: SignInView(), isActive: $signUpViewModel.enterLogin) {
                     Button(action: {
                         signUpViewModel.signUpUser(username: username, password: password)
-                    })
-                    {
-                        Text("Sign In Instead")
-                                    .font(.headline)
-                                    .padding()
+                    }) {
+                        Text("Register")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 220, height: 60)
+                            .background(.blue)
+                            .cornerRadius(15.0)
                     }
                 }
                 .navigationTitle("Join Gather")
-                
                 .alert(item: $signUpViewModel.signUpError) { value in
                     switch value {
                         
@@ -75,6 +67,17 @@ struct SignUpView: View {
                         return Alert(title: Text("Server Error"))
                     }
                 }
+                NavigationLink {
+                    SignInView()
+                } label: {
+                    Button(action: {})
+                    {
+                        Text("Sign In Instead")
+                                    .font(.headline)
+                                    .padding()
+                    }
+                }
+                .navigationTitle("Join Gather")
                 
                 Spacer()
                 

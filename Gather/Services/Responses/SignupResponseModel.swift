@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct SignupResponseModel: Identifiable, Codable {
-    var id: String = UUID().uuidString
+struct SignupResponseModel: Codable {
     var message: String
 }
