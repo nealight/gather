@@ -14,8 +14,13 @@ struct SignInView: View {
     @State var username: String = ""
     @State var password: String = ""
     @State private var loggedIn = false
+    private var title: String
     
     @Environment(\.colorScheme) private var colorScheme
+    
+    init(title: String = "Welcome Back!") {
+        self.title = title
+    }
     
     public var textFieldColor: Color {
         switch colorScheme {
@@ -30,7 +35,7 @@ struct SignInView: View {
     
     var body: some View {
             VStack {
-                Text("Welcome back!")
+                Text(self.title)
                                 .font(.largeTitle)
                                 .fontWeight(.semibold)
                                 .padding(.bottom, 20)

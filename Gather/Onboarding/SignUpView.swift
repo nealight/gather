@@ -12,6 +12,7 @@ struct SignUpView: View {
     
     @State var username: String = ""
     @State var password: String = ""
+    @State var signInTapped = false
     
     @StateObject var signUpViewModel = SignUpViewModel()
     
@@ -44,7 +45,7 @@ struct SignUpView: View {
                     .cornerRadius(10.0)
                     .padding(.bottom, 20)
                 
-                NavigationLink(destination: SignInView(), isActive: $signUpViewModel.enterLogin) {
+                NavigationLink(destination: SignInView(title: "Welcome to Gather!"), isActive: $signUpViewModel.enterLogin) {
                     Button(action: {
                         signUpViewModel.signUpUser(username: username, password: password)
                     }) {
@@ -67,10 +68,10 @@ struct SignUpView: View {
                         return Alert(title: Text("Server Error"))
                     }
                 }
-                NavigationLink {
-                    SignInView()
-                } label: {
-                    Button(action: {})
+                
+                
+                NavigationLink(isActive: $signInTapped, destination: {SignInView()}) {
+                    Button(action: {signInTapped = true})
                     {
                         Text("Sign In Instead")
                                     .font(.headline)
