@@ -13,7 +13,8 @@ struct SignUpView: View {
     @State var username: String = ""
     @State var password: String = ""
     
-    @State var signUpUser = false
+    @StateObject var signUpViewModel = SignUpViewModel()
+    
     @Environment(\.colorScheme) private var colorScheme
     
     public var textFieldColor: Color {
@@ -53,15 +54,30 @@ struct SignUpView: View {
                                 .cornerRadius(15.0)
                 }
                 
-                NavigationLink(destination: SignInView(), isActive: $signUpUser) {
-                    Button(action: {signUpUser = true}) {
+                NavigationLink(destination: SignInView(), isActive: $signUpViewModel.enterLogin) {
+                    Button(action: {
+                        signUpViewModel.signUpUser(username: username, password: password)
+                    })
+                    {
                         Text("Sign In Instead")
                                     .font(.headline)
                                     .padding()
                     }
-                }.navigationTitle("Join Gather")
+                }
+                .navigationTitle("Join Gather")
+                
+                .alert(item: $signUpViewModel.signUpError) { value in
+                    switch value {
+                        
+                    case .duplicate:
+                        return Alert(title: Text("Duplicate User"))
+                    case .error:
+                        return Alert(title: Text("Server Error"))
+                    }
+                }
                 
                 Spacer()
+                
             }.padding()
         }
     }
