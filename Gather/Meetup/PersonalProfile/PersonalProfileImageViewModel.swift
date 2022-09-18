@@ -16,7 +16,7 @@ class PersonalProfileImageViewModel: ObservableObject {
     
     private var profileImageService: PersonalProfileImageServiceProtocol
     
-    init(profileImageService: PersonalProfileImageServiceProtocol = PersonalProfileImageService.shared) {
+    init(profileImageService: PersonalProfileImageServiceProtocol = ProfileImageService.shared) {
         self.profileImageService = profileImageService
         
         self.profileImageService.personalProfileImageDataPublisher.sink { data in

@@ -14,9 +14,9 @@ protocol PersonalProfileImageServiceProtocol: ProfileImageServiceProtocol {
     func uploadImage(imageRawData: Data)
 }
 
-class PersonalProfileImageService: ObservableObject, PersonalProfileImageServiceProtocol {
+class ProfileImageService: ObservableObject, PersonalProfileImageServiceProtocol {
     @Published var personalProfileImageData: Data?
-    static let shared: PersonalProfileImageServiceProtocol = PersonalProfileImageService()
+    static let shared: PersonalProfileImageServiceProtocol = ProfileImageService()
     var personalProfileImageDataPublisher: Published<Data?>.Publisher { $personalProfileImageData }
     
     func uploadImage(imageRawData: Data) {

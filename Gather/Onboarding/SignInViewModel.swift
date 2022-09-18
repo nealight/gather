@@ -37,20 +37,20 @@ class SignInViewModel: ObservableObject {
     
     func signInUser(username: String, password: String) {
         userService.signinAccount(usernameText: username, passwordText: password)
-            .sink { (serviceResponse) in
-                let message = serviceResponse.message
-                if message == "ok" {
-                    self.signInSuccess = true
-                } else if message == "user not found" {
-                    self.signInError = .userNotFound
-                } else if message == "password incorrect" {
-                    self.signInError = .passwordIncorrect
-                } else if message == "error" {
+            .sink { (dataResponse) in
+                if dataResponse.error != nil {
                     self.signInError = .error
+                } else {
+                    let message = dataResponse.value?.message
+                    if message == "ok" {
+                        self.signInSuccess = true
+                    } else if message == "user not found" {
+                        self.signInError = .userNotFound
+                    } else if message == "password incorrect" {
+                        self.signInError = .passwordIncorrect
+                    }
                 }
-                
             }
             .store(in: &cancellableSet)
-    
     }
 }
