@@ -23,10 +23,16 @@ class CentralMapViewModel: ObservableObject {
     @Published var locations: [ActiveUser] = [
         // For testing
         ActiveUser(id: UUID().uuidString, coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("sample_profile"), profileDetailShowable: true)),
-        ActiveUser(id: UUID().uuidString, coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileSnapshotView(name: "Big Red", image: Image("sample_profile"), profileDetailShowable: true)),
     ]
 
     var locationManager = CLLocationManager()
+    
+    init() {
+        // For testing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.locations.append(ActiveUser(id: UUID().uuidString, coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileSnapshotView(name: "Big Red", image: Image("sample_profile"), profileDetailShowable: true)))
+        }
+    }
     
     
     func checkLocationAuthorization() {
