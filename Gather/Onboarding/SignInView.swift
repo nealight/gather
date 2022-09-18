@@ -63,6 +63,16 @@ struct SignInView: View {
                         .background(.blue)
                         .cornerRadius(15.0)
                 }
+                .alert(item: $signInViewModel.signInError) { value in
+                    switch value {
+                    case .userNotFound:
+                        return Alert(title: Text("Incorrect Username"), message: Text("You may have a typo in your username. If you are not registered, you can go back to the registration page to join the Gather community."))
+                    case .passwordIncorrect:
+                        return Alert(title: Text("Wrong Password"))
+                    case .error:
+                        return Alert(title: Text("Server Error"))
+                    }
+                }
                 .fullScreenCover(isPresented: $signInViewModel.signInSuccess, content: {MeetupView()})
                 
                 Spacer()

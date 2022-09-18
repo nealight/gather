@@ -9,5 +9,5 @@ import Foundation
 
 struct SigninResponseModel: Codable {
     var message: String
-    var token: String
+    var token: String?
 }
