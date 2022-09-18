@@ -13,7 +13,7 @@ struct SignInView: View {
     
     @State var username: String = ""
     @State var password: String = ""
-    @State private var loggedIn = false
+    @StateObject private var signInViewModel = SignInViewModel()
     private var title: String
     
     @Environment(\.colorScheme) private var colorScheme
@@ -53,7 +53,7 @@ struct SignInView: View {
                     .padding(.bottom, 20)
                 
                 Button(action: {
-                    loggedIn = true
+                    signInViewModel.signInUser(username: username, password: password)
                 }) {
                     Text("Sign In")
                         .font(.headline)
@@ -63,7 +63,7 @@ struct SignInView: View {
                         .background(.blue)
                         .cornerRadius(15.0)
                 }
-                    .fullScreenCover(isPresented: $loggedIn, content: {MeetupView()})
+                .fullScreenCover(isPresented: $signInViewModel.signInSuccess, content: {MeetupView()})
                 
                 Spacer()
             }.padding()

@@ -78,13 +78,13 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "registerAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 9ec44089ff0b0e0f"
+                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 9ec44089ff0b0e6a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -94,12 +94,12 @@
                   urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "132">
                </Location>
                <Location
-                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 465f1b2d13435d92"
+                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 465f1b2d13435df7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -109,8 +109,8 @@
                   urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "60">
                </Location>
             </Locations>
@@ -126,8 +126,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "registerAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
