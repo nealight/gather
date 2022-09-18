@@ -9,10 +9,13 @@ import Foundation
 import Alamofire
 import Combine
 
+
 class UserService {
     static let shared = UserService()
     let networkClient: NetworkClient
-    
+    @Published var signInServiceResponse: SigninServiceResponseModel = .init(message: "")
+    var signInServiceResponsePublisher: Published<SigninServiceResponseModel>.Publisher { $signInServiceResponse }
+        
     private var cancellableSet: Set<AnyCancellable> = []
     var token: String?
     
@@ -42,14 +45,19 @@ class UserService {
                     .eraseToAnyPublisher()
     }
     
-    func signinAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SigninResponseModel, NetworkError>, Never> {
+    func signinAccount(usernameText: String, passwordText: String) -> Published<SigninServiceResponseModel>.Publisher {
+        
         let result = self._signinAccount(usernameText: usernameText, passwordText: passwordText)
         result.sink { (dataResponse) in
+            guard let value = dataResponse.value else {
+                return
+            }
             if dataResponse.error == nil {
-                self.token = dataResponse.value?.token
+                self.token = value.token
+                self.signInServiceResponse = SigninServiceResponseModel(message: value.message)
             }
         }.store(in: &cancellableSet)
-        return result
+        return self.signInServiceResponsePublisher
     }
     
     private func _signinAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SigninResponseModel, NetworkError>, Never> {
