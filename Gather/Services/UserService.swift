@@ -45,22 +45,17 @@ class UserService {
                     .eraseToAnyPublisher()
     }
     
-    func signinAccount(usernameText: String, passwordText: String) -> Published<SigninServiceResponseModel>.Publisher {
-        
-        let result = self._signinAccount(usernameText: usernameText, passwordText: passwordText)
-        result.sink { (dataResponse) in
-            guard let value = dataResponse.value else {
-                return
-            }
-            if dataResponse.error == nil {
-                self.token = value.token
-                self.signInServiceResponse = SigninServiceResponseModel(message: value.message)
-            }
-        }.store(in: &cancellableSet)
-        return self.signInServiceResponsePublisher
+    func signinAccount(usernameText: String, passwordText: String) async -> SigninServiceResponseModel {
+        let response = await self._signinAccount(usernameText: usernameText, passwordText: passwordText)
+    
+        guard let value = response.value else {
+            return SigninServiceResponseModel(message: "server error")
+        }
+        self.token = value.token
+        return SigninServiceResponseModel(message: value.message)
     }
     
-    private func _signinAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SigninResponseModel, NetworkError>, Never> {
+    private func _signinAccount(usernameText: String, passwordText: String) async -> DataResponse<SigninResponseModel, AFError> {
         let parameters: [String: String] = [
             "user_name": usernameText,
             "password": passwordText
@@ -68,16 +63,6 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signin")
         
-        return AF.request(url, method: .post, parameters: parameters)
-                    .validate()
-                    .publishDecodable(type: SigninResponseModel.self)
-                    .map { response in
-                        response.mapError { error in
-                            let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0)}
-                            return NetworkError(initialError: error, backendError: backendError)
-                        }
-                    }
-                    .receive(on: DispatchQueue.main)
-                    .eraseToAnyPublisher()
+        return await AF.request(url, method: .post, parameters: parameters).serializingDecodable(SigninResponseModel.self).response
     }
 }
