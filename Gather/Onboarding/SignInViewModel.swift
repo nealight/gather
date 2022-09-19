@@ -41,6 +41,7 @@ class SignInViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func _signInUser(username: String, password: String) async {
         let serviceResponse = await userService.signinAccount(usernameText: username, passwordText: password)
             
