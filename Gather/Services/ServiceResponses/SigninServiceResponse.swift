@@ -10,7 +10,3 @@ import Foundation
 struct SigninServiceResponseModel: Codable {
     var message: String
 }
-
-protocol SigninServiceResponseProtocol {
-    var message: Published<SigninServiceResponseModel>.Publisher { get }
-}
