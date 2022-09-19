@@ -9,10 +9,13 @@ import Foundation
 import Alamofire
 import Combine
 
+
 class UserService {
     static let shared = UserService()
     let networkClient: NetworkClient
-    
+    @Published var signInServiceResponse: SigninServiceResponseModel = .init(message: "")
+    var signInServiceResponsePublisher: Published<SigninServiceResponseModel>.Publisher { $signInServiceResponse }
+        
     private var cancellableSet: Set<AnyCancellable> = []
     var token: String?
     
@@ -42,17 +45,17 @@ class UserService {
                     .eraseToAnyPublisher()
     }
     
-    func signinAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SigninResponseModel, NetworkError>, Never> {
-        let result = self._signinAccount(usernameText: usernameText, passwordText: passwordText)
-        result.sink { (dataResponse) in
-            if dataResponse.error == nil {
-                self.token = dataResponse.value?.token
-            }
-        }.store(in: &cancellableSet)
-        return result
+    func signinAccount(usernameText: String, passwordText: String) async -> SigninServiceResponseModel {
+        let response = await self._signinAccount(usernameText: usernameText, passwordText: passwordText)
+    
+        guard let value = response.value else {
+            return SigninServiceResponseModel(message: "server error")
+        }
+        self.token = value.token
+        return SigninServiceResponseModel(message: value.message)
     }
     
-    private func _signinAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SigninResponseModel, NetworkError>, Never> {
+    private func _signinAccount(usernameText: String, passwordText: String) async -> DataResponse<SigninResponseModel, AFError> {
         let parameters: [String: String] = [
             "user_name": usernameText,
             "password": passwordText
@@ -60,16 +63,6 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signin")
         
-        return AF.request(url, method: .post, parameters: parameters)
-                    .validate()
-                    .publishDecodable(type: SigninResponseModel.self)
-                    .map { response in
-                        response.mapError { error in
-                            let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0)}
-                            return NetworkError(initialError: error, backendError: backendError)
-                        }
-                    }
-                    .receive(on: DispatchQueue.main)
-                    .eraseToAnyPublisher()
+        return await AF.request(url, method: .post, parameters: parameters).serializingDecodable(SigninResponseModel.self).response
     }
 }

@@ -28,6 +28,7 @@
 		1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3695B28CD76F800F66A26 /* NetworkClient.swift */; };
 		1CC68A3328D7A08B00F5C93E /* SigninResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC68A3228D7A08B00F5C93E /* SigninResponseModel.swift */; };
 		1CC68A3528D7A5D800F5C93E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC68A3428D7A5D800F5C93E /* SignInViewModel.swift */; };
+		1CC68A3828D7ACC800F5C93E /* SigninServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC68A3728D7ACC800F5C93E /* SigninServiceResponse.swift */; };
 		1CC9009028CE8DA800704D7C /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9008F28CE8DA800704D7C /* ActiveUser.swift */; };
 		1CE1417928D0056900085A9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1417828D0056900085A9F /* ProfileImageView.swift */; };
 		1CE1417F28D00D9A00085A9F /* PersonalProfileImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */; };
@@ -79,6 +80,7 @@
 		1CB3695B28CD76F800F66A26 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		1CC68A3228D7A08B00F5C93E /* SigninResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponseModel.swift; sourceTree = "<group>"; };
 		1CC68A3428D7A5D800F5C93E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		1CC68A3728D7ACC800F5C93E /* SigninServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninServiceResponse.swift; sourceTree = "<group>"; };
 		1CC9008F28CE8DA800704D7C /* ActiveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		1CE1417828D0056900085A9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		1CE1417E28D00D9A00085A9F /* PersonalProfileImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileImageModel.swift; sourceTree = "<group>"; };
@@ -127,7 +129,8 @@
 		1C961ED528CE429A0090D399 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1CEBE56628D51A4000E8C11F /* Responses */,
+				1CC68A3628D7ABA100F5C93E /* ServiceResponses */,
+				1CEBE56628D51A4000E8C11F /* NetworkResponses */,
 				1CB3695B28CD76F800F66A26 /* NetworkClient.swift */,
 				1C99C23E28D1146C00CA6795 /* NetworkError.swift */,
 				1CB3695628CD747000F66A26 /* UserService.swift */,
@@ -222,13 +225,21 @@
 			path = GatherUITests;
 			sourceTree = "<group>";
 		};
-		1CEBE56628D51A4000E8C11F /* Responses */ = {
+		1CC68A3628D7ABA100F5C93E /* ServiceResponses */ = {
+			isa = PBXGroup;
+			children = (
+				1CC68A3728D7ACC800F5C93E /* SigninServiceResponse.swift */,
+			);
+			path = ServiceResponses;
+			sourceTree = "<group>";
+		};
+		1CEBE56628D51A4000E8C11F /* NetworkResponses */ = {
 			isa = PBXGroup;
 			children = (
 				1CEBE56728D51A9600E8C11F /* SignupResponseModel.swift */,
 				1CC68A3228D7A08B00F5C93E /* SigninResponseModel.swift */,
 			);
-			path = Responses;
+			path = NetworkResponses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +389,7 @@
 				1CC68A3528D7A5D800F5C93E /* SignInViewModel.swift in Sources */,
 				1C99C23D28D1138500CA6795 /* PersonalProfileImageService.swift in Sources */,
 				1C961EE128CE65A30090D399 /* CentralMapView.swift in Sources */,
+				1CC68A3828D7ACC800F5C93E /* SigninServiceResponse.swift in Sources */,
 				1CC68A3328D7A08B00F5C93E /* SigninResponseModel.swift in Sources */,
 				1CE1418128D00FAE00085A9F /* PersonalProfileView.swift in Sources */,
 				1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */,

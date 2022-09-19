@@ -36,21 +36,23 @@ class SignInViewModel: ObservableObject {
     }
     
     func signInUser(username: String, password: String) {
-        userService.signinAccount(usernameText: username, passwordText: password)
-            .sink { (dataResponse) in
-                if dataResponse.error != nil {
-                    self.signInError = .error
-                } else {
-                    let message = dataResponse.value?.message
-                    if message == "ok" {
-                        self.signInSuccess = true
-                    } else if message == "user not found" {
-                        self.signInError = .userNotFound
-                    } else if message == "password incorrect" {
-                        self.signInError = .passwordIncorrect
-                    }
-                }
-            }
-            .store(in: &cancellableSet)
+        Task {
+            await _signInUser(username: username, password: password)
+        }
+    }
+    
+    func _signInUser(username: String, password: String) async {
+        let serviceResponse = await userService.signinAccount(usernameText: username, passwordText: password)
+            
+        let message = serviceResponse.message
+        if message == "ok" {
+            self.signInSuccess = true
+        } else if message == "user not found" {
+            self.signInError = .userNotFound
+        } else if message == "password incorrect" {
+            self.signInError = .passwordIncorrect
+        } else if message == "server error" {
+            self.signInError = .error
+        }
     }
 }
