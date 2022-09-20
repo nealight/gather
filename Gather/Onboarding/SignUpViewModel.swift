@@ -25,27 +25,27 @@ enum SignUpError: Identifiable {
 class SignUpViewModel: ObservableObject {
     @Published var signUpError: SignUpError?
     @Published var enterLogin = false
-    private var cancellableSet: Set<AnyCancellable> = []
     let userService: UserService
     
     init(userService: UserService = UserService.shared) {
         self.userService = userService
     }
     
+    @MainActor
     func signUpUser(username: String, password: String) {
-        userService.registerAccount(usernameText: username, passwordText: password)
-            .sink { (dataResponse) in
-                if dataResponse.error != nil {
-                    self.signUpError = .error
-                } else {
-                    let message = dataResponse.value?.message
-                    if message == "ok" {
-                        self.enterLogin = true
-                    } else if message == "duplicate user" {
-                        self.signUpError = .duplicate
-                    }
+        Task {
+            let dataResponse = await userService.registerAccount(usernameText: username, passwordText: password)
+            
+            if dataResponse.error != nil {
+                self.signUpError = .error
+            } else {
+                let message = dataResponse.value?.message
+                if message == "ok" {
+                    self.enterLogin = true
+                } else if message == "duplicate user" {
+                    self.signUpError = .duplicate
                 }
             }
-            .store(in: &cancellableSet)
+        }
     }
 }

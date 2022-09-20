@@ -23,7 +23,7 @@ class UserService {
         self.networkClient = networkClient
     }
     
-    func registerAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SignupNetworkResponseModel, AFError>, Never> {
+    func registerAccount(usernameText: String, passwordText: String) async -> DataResponse<SignupNetworkResponseModel, AFError> {
         
         let parameters: [String: String] = [
             "user_name": usernameText,
@@ -32,11 +32,10 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signup")
         
-        return AF.request(url, method: .post, parameters: parameters)
-                    .validate()
-                    .publishDecodable(type: SignupNetworkResponseModel.self)
-                    .receive(on: DispatchQueue.main)
-                    .eraseToAnyPublisher()
+        return await AF.request(url, method: .post, parameters: parameters)
+                       .validate()
+                       .serializingDecodable(SignupNetworkResponseModel.self)
+                       .response
     }
     
     func signinAccount(usernameText: String, passwordText: String) async -> SigninServiceResponseModel {
