@@ -23,7 +23,7 @@ class UserService {
         self.networkClient = networkClient
     }
     
-    func registerAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SignupResponseModel, NetworkError>, Never> {
+    func registerAccount(usernameText: String, passwordText: String) -> AnyPublisher<DataResponse<SignupNetworkResponseModel, NetworkError>, Never> {
         
         let parameters: [String: String] = [
             "user_name": usernameText,
@@ -34,7 +34,7 @@ class UserService {
         
         return AF.request(url, method: .post, parameters: parameters)
                     .validate()
-                    .publishDecodable(type: SignupResponseModel.self)
+                    .publishDecodable(type: SignupNetworkResponseModel.self)
                     .map { response in
                         response.mapError { error in
                             let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0)}
@@ -55,7 +55,7 @@ class UserService {
         return SigninServiceResponseModel(message: value.message)
     }
     
-    private func _signinAccount(usernameText: String, passwordText: String) async -> DataResponse<SigninResponseModel, AFError> {
+    private func _signinAccount(usernameText: String, passwordText: String) async -> DataResponse<SigninNetworkResponseModel, NetworkError> {
         let parameters: [String: String] = [
             "user_name": usernameText,
             "password": passwordText
@@ -63,6 +63,12 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signin")
         
-        return await AF.request(url, method: .post, parameters: parameters).serializingDecodable(SigninResponseModel.self).response
+        return await AF.request(url, method: .post, parameters: parameters)
+                       .validate()
+                       .serializingDecodable(SigninNetworkResponseModel.self)
+                       .response
+                       .mapError {
+                           return NetworkError(initialError: $0, backendError: nil)
+                       }
     }
 }

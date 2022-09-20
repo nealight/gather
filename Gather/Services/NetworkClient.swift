@@ -14,13 +14,7 @@ class NetworkClient {
     public func buildURL(uri: String) -> String {
         return NetworkClient.shared.remoteDomain + uri;
     }
-
-    let session: Session
     
-    private init() {
-        session = Session()
-    }
-
     public static let shared = NetworkClient()
   
 }

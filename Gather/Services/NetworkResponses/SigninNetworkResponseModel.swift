@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SigninResponseModel: Codable {
+struct SigninNetworkResponseModel: Codable {
     var message: String
     var token: String?
 }

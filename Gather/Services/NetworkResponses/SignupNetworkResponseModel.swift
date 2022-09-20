@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SignupResponseModel: Codable {
+struct SignupNetworkResponseModel: Codable {
     var message: String
 }
