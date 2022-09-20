@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "361AC2F0-0874-4A16-98D8-3D576280833D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Services/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "registerAccount(usernameText:passwordText:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "38498F7C-4B9B-407F-B8FC-FB8C1479EE3F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -206,8 +190,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
@@ -269,8 +253,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -285,8 +269,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -304,22 +288,6 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "_signInUser(username:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9C7372D4-B8FF-4E14-B0CA-5D27A6747EB5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Services/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "_signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
