@@ -82,54 +82,6 @@
             endingLineNumber = "40"
             landmarkName = "registerAccount(usernameText:passwordText:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 9ec44089ff0b0dc9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.AFError) -&gt; Gather.NetworkError in closure #1 (Alamofire.DataResponse&lt;Gather.SignupResponseModel, Alamofire.AFError&gt;) -&gt; Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt; in Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String) -&gt; Combine.AnyPublisher&lt;Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt;, Swift.Never&gt;"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "361AC2F0-0874-4A16-98D8-3D576280833D - 465f1b2d13435e54"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.Data) -&gt; Swift.Optional&lt;Gather.BackendError&gt; in closure #1 (Alamofire.AFError) -&gt; Gather.NetworkError in closure #1 (Alamofire.DataResponse&lt;Gather.SignupResponseModel, Alamofire.AFError&gt;) -&gt; Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt; in Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String) -&gt; Combine.AnyPublisher&lt;Alamofire.DataResponse&lt;Gather.SignupResponseModel, Gather.NetworkError&gt;, Swift.Never&gt;"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "861A989A-F0B2-44DE-BD38-98EF0493E491"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Services/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "registerAccount(usernameText:passwordText:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,8 +206,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
@@ -317,8 +269,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -333,8 +285,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -352,6 +304,22 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "_signInUser(username:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C7372D4-B8FF-4E14-B0CA-5D27A6747EB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "_signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

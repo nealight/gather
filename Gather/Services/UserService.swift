@@ -36,9 +36,12 @@ class UserService {
                     .validate()
                     .publishDecodable(type: SignupNetworkResponseModel.self)
                     .map { response in
-                        response.mapError { error in
-                            let backendError = response.data.flatMap { try? JSONDecoder().decode(BackendError.self, from: $0)}
-                            return NetworkError(initialError: error, backendError: backendError)
+                        response.mapError {
+                            var backEndError: BackendError?
+                            if let statusCode = $0.responseCode {
+                                backEndError = BackendError(status: String(statusCode))
+                            }
+                            return NetworkError(initialError: $0, backendError: backEndError)
                         }
                     }
                     .receive(on: DispatchQueue.main)
@@ -47,6 +50,10 @@ class UserService {
     
     func signinAccount(usernameText: String, passwordText: String) async -> SigninServiceResponseModel {
         let response = await self._signinAccount(usernameText: usernameText, passwordText: passwordText)
+        
+        if let backendError = response.error?.backendError {
+            return SigninServiceResponseModel(message: "server error with status code \(backendError.status)")
+        }
     
         guard let value = response.value else {
             return SigninServiceResponseModel(message: "server error")
@@ -68,7 +75,11 @@ class UserService {
                        .serializingDecodable(SigninNetworkResponseModel.self)
                        .response
                        .mapError {
-                           return NetworkError(initialError: $0, backendError: nil)
+                           var backEndError: BackendError?
+                           if let statusCode = $0.responseCode {
+                               backEndError = BackendError(status: String(statusCode))
+                           }
+                           return NetworkError(initialError: $0, backendError: backEndError)
                        }
     }
 }

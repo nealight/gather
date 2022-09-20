@@ -52,7 +52,7 @@ class SignInViewModel: ObservableObject {
             self.signInError = .userNotFound
         } else if message == "password incorrect" {
             self.signInError = .passwordIncorrect
-        } else if message == "server error" {
+        } else {
             self.signInError = .error
         }
     }
