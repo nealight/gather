@@ -7,6 +7,6 @@
 
 import Foundation
 
-class ActiveUserQueryNetworkReponseModel: Codable {
+struct ActiveUserQueryNetworkReponseModel: Codable {
     let activeUsers: [ActiveUserNetworkModel]
 }

@@ -44,7 +44,11 @@ class UserService {
         guard let value = response.value else {
             return SigninServiceResponseModel(message: "server error")
         }
-        self.token = value.token
+        
+        if response.response?.statusCode == 200 {
+            // Only store token when status code shows success
+            self.token = value.token
+        }
         return SigninServiceResponseModel(message: value.message)
     }
     
