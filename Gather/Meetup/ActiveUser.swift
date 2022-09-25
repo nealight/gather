@@ -11,7 +11,7 @@ import UIKit
 import SwiftUI
 
 struct ActiveUser: Identifiable {
-    var id: String
+    var id: String = UUID().uuidString
     var coordinates: CLLocationCoordinate2D
-    var image: ProfileSnapshotView
+    var image: ProfileSnapshotView?
 }

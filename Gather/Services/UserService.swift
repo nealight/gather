@@ -61,4 +61,29 @@ class UserService {
                        .serializingDecodable(SigninNetworkResponseModel.self)
                        .response
     }
+    
+    func fetchActiveUsers() async {
+        guard let response = await self._fetchActiveUsers() else {
+            return
+        }
+        debugPrint(response)
+        
+        
+    }
+    
+    private func _fetchActiveUsers() async -> DataResponse<ActiveUserQueryNetworkReponseModel, AFError>? {
+        guard let token = token else {
+            return nil
+        }
+        let parameters: [String: String] = [
+            "token": token,
+        ]
+        
+        let url = networkClient.buildURL(uri: "api/map/fetch_all_active_users")
+        
+        return await AF.request(url, method: .post, parameters: parameters)
+                       .validate()
+                       .serializingDecodable(ActiveUserQueryNetworkReponseModel.self)
+                       .response
+    }
 }
