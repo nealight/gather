@@ -8,19 +8,34 @@
 import Foundation
 import Alamofire
 import Combine
+import CoreLocation
 
 
 class UserService {
     static let shared = UserService()
+    
+    let locationManager = CLLocationManager()
     let networkClient: NetworkClient
-    @Published var signInServiceResponse: SigninServiceResponseModel = .init(message: "")
-    var signInServiceResponsePublisher: Published<SigninServiceResponseModel>.Publisher { $signInServiceResponse }
-        
+    
+    private let refreshInterval = 1.0
+    private let refreshTimer: Publishers.Autoconnect<Timer.TimerPublisher>
+    @Published var fetchedUsers: [ActiveUserNetworkModel] = []
+         
     private var cancellableSet: Set<AnyCancellable> = []
     var token: String?
     
     init(networkClient: NetworkClient = NetworkClient.shared) {
         self.networkClient = networkClient
+        self.refreshTimer = Timer.publish(every: refreshInterval, tolerance: 0.5, on: .main, in: .common).autoconnect()
+        configureLocationUpdates()
+    }
+    
+    func configureLocationUpdates() {
+        self.refreshTimer.sink { _ in
+            Task {
+                await self.fetchActiveUsers()
+            }
+        }.store(in: &cancellableSet)
     }
     
     func registerAccount(usernameText: String, passwordText: String) async -> DataResponse<SignupNetworkResponseModel, AFError> {
@@ -70,8 +85,14 @@ class UserService {
         guard let response = await self._fetchActiveUsers() else {
             return
         }
-        debugPrint(response)
+        guard let users = response.value else {
+            return
+        }
         
+        fetchedUsers = users.activeUsers
+//        for user in users.activeUsers {
+//            activeUsers.append(.init(coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate))))
+//        }
         
     }
     
@@ -79,15 +100,25 @@ class UserService {
         guard let token = token else {
             return nil
         }
+        
+        let myLocation = locationManager.location
+        
+        guard let myLocation = myLocation else {
+            return nil
+        }
+        
         let parameters: [String: String] = [
             "token": token,
+            "my_x_coordinate": String(myLocation.coordinate.latitude),
+            "my_y_coordinate": String(myLocation.coordinate.longitude)
         ]
         
-        let url = networkClient.buildURL(uri: "api/map/fetch_all_active_users")
+        let url = networkClient.buildURL(uri: "api/map/update")
         
         return await AF.request(url, method: .post, parameters: parameters)
                        .validate()
                        .serializingDecodable(ActiveUserQueryNetworkReponseModel.self)
                        .response
     }
+    
 }

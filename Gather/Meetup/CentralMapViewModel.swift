@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import MapKit
 import SwiftUI
+import Combine
 
 class CentralMapViewModel: ObservableObject {
     @Published var region = MKCoordinateRegion(
@@ -20,23 +21,28 @@ class CentralMapViewModel: ObservableObject {
                         longitudeDelta: 0.03)
                     )
     
-    @Published var locations: [ActiveUser] = [
-        // For testing
-        ActiveUser(coordinates: .init(latitude: 42.45, longitude: -76.47), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)),
-    ]
+    @Published var locations: [ActiveUser] = []
 
-    var locationManager = CLLocationManager()
+    let locationManager: CLLocationManager
+    private var cancellableSet: Set<AnyCancellable> = []
+    let userService: UserService
     
-    init() {
+    init(userService: UserService = UserService.shared) {
         // For testing
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.locations.append(ActiveUser(coordinates: .init(latitude: 42.46, longitude: -76.46), image: ProfileSnapshotView(name: "Big Red", image: Image("default_avatar"), profileDetailShowable: true)))
-        }
-        
-        Task {
-            await UserService.shared.fetchActiveUsers()
-        }
-        
+        self.userService = userService
+        self.locationManager = self.userService.locationManager
+        configureUserUpdates()
+    }
+    
+    func configureUserUpdates() {
+        self.userService.$fetchedUsers
+            .receive(on: DispatchQueue.main)
+            .sink { users in
+            self.locations = []
+            for user in users {
+                self.locations.append(.init(coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate)), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)))
+            }
+        }.store(in: &cancellableSet)
     }
     
     
