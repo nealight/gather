@@ -14,7 +14,7 @@ struct MeetupView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text("John Appleseed")
+                Text(UserService.shared.getUsername())
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
