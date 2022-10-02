@@ -190,8 +190,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
@@ -253,8 +253,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "_signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -269,8 +269,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "UserService"
             landmarkType = "3">
          </BreakpointContent>
@@ -301,8 +301,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -317,8 +317,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "_fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -333,8 +333,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -365,8 +365,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "configureLocationUpdates()"
             landmarkType = "7">
             <Locations>
@@ -413,10 +413,42 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FAB0240C-1CF6-4EDC-9425-525678296FAB - fa42371a476e411f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for Gather.UserService.fetchActiveUsers() async -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "FAB0240C-1CF6-4EDC-9425-525678296FAB - 6f391c540ff3e4e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Gather.ActiveUserNetworkModel) -&gt; Swift.Bool in Gather.UserService.fetchActiveUsers() async -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -449,38 +481,22 @@
             endingLineNumber = "38"
             landmarkName = "configureUserUpdates()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2ABE5829-086C-4C93-A527-F70CF358005A - 3ae16187615ba835"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gather.CentralMapViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Meetup/CentralMapViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "2ABE5829-086C-4C93-A527-F70CF358005A - fc3a7221bd6630aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Gather.ActiveUserNetworkModel&gt;) -&gt; () in Gather.CentralMapViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Meetup/CentralMapViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "222B72CB-6279-45A0-9801-9B04544E2E1F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "signinAccount(usernameText:passwordText:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

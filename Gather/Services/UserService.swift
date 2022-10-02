@@ -17,6 +17,7 @@ class UserService {
     let locationManager = CLLocationManager()
     let networkClient: NetworkClient
     
+    var userName: String?
     private let refreshInterval = 1.0
     private let refreshTimer: Publishers.Autoconnect<Timer.TimerPublisher>
     @Published var fetchedUsers: [ActiveUserNetworkModel] = []
@@ -63,6 +64,7 @@ class UserService {
         if response.response?.statusCode == 200 {
             // Only store token when status code shows success
             self.token = value.token
+            self.userName = usernameText
         }
         return SigninServiceResponseModel(message: value.message)
     }
@@ -89,7 +91,7 @@ class UserService {
             return
         }
         
-        fetchedUsers = users.activeUsers
+        fetchedUsers = users.activeUsers.filter({ $0.user_name != self.userName })
 //        for user in users.activeUsers {
 //            activeUsers.append(.init(coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate))))
 //        }
