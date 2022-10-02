@@ -41,7 +41,7 @@ struct PersonalProfileView: View {
                 
                 Spacer()
                 
-            }.navigationBarTitle("John Appleseed", displayMode: .automatic)
+            }.navigationBarTitle(UserService.shared.getUsername(), displayMode: .automatic)
         }
     }
 }
