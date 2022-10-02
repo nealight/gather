@@ -18,7 +18,7 @@ class UserService {
     let networkClient: NetworkClient
     
     var userName: String?
-    private let refreshInterval = 1.0
+    private let refreshInterval = 10.0
     private let refreshTimer: Publishers.Autoconnect<Timer.TimerPublisher>
     @Published var fetchedUsers: [ActiveUserNetworkModel] = []
          
@@ -65,6 +65,10 @@ class UserService {
             // Only store token when status code shows success
             self.token = value.token
             self.userName = usernameText
+            
+            Task {
+                await self.fetchActiveUsers()
+            }
         }
         return SigninServiceResponseModel(message: value.message)
     }
@@ -109,10 +113,10 @@ class UserService {
             return nil
         }
         
-        let parameters: [String: String] = [
+        let parameters: [String: Any] = [
             "token": token,
-            "my_x_coordinate": String(myLocation.coordinate.latitude),
-            "my_y_coordinate": String(myLocation.coordinate.longitude)
+            "my_x_coordinate": myLocation.coordinate.latitude,
+            "my_y_coordinate": myLocation.coordinate.longitude
         ]
         
         let url = networkClient.buildURL(uri: "api/map/update")
