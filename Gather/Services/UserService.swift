@@ -71,7 +71,7 @@ class UserService {
         if response.response?.statusCode == 200 {
             // Only store token when status code shows success
             self.token = value.token
-            self.userName = usernameText
+            self.userName = value.user_name
             
             Task {
                 await self.fetchActiveUsers()

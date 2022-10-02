@@ -9,5 +9,6 @@ import Foundation
 
 struct SigninNetworkResponseModel: Codable {
     var message: String
+    var user_name: String
     var token: String?
 }
