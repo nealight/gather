@@ -38,9 +38,9 @@ class CentralMapViewModel: ObservableObject {
         self.userService.$fetchedUsers
             .receive(on: DispatchQueue.main)
             .sink { users in
-            self.locations = []
             for user in users {
-                self.locations.insert(.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate)), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)))
+                let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate)), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)))
+                self.locations.update(with: newLocation)
             }
         }.store(in: &cancellableSet)
     }
