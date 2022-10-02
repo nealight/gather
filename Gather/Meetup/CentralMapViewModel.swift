@@ -21,7 +21,7 @@ class CentralMapViewModel: ObservableObject {
                         longitudeDelta: 0.03)
                     )
     
-    @Published var locations: [ActiveUser] = []
+    @Published var locations: Set<ActiveUser> = []
 
     let locationManager: CLLocationManager
     private var cancellableSet: Set<AnyCancellable> = []
@@ -40,7 +40,7 @@ class CentralMapViewModel: ObservableObject {
             .sink { users in
             self.locations = []
             for user in users {
-                self.locations.append(.init(coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate)), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)))
+                self.locations.insert(.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate)), image: ProfileSnapshotView(name: "Joana Appleseed", image: Image("default_avatar"), profileDetailShowable: true)))
             }
         }.store(in: &cancellableSet)
     }
