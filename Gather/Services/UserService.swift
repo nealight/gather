@@ -55,7 +55,7 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signup")
         
-        return await AF.request(url, method: .post, parameters: parameters)
+        return await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                        .validate()
                        .serializingDecodable(SignupNetworkResponseModel.self)
                        .response
@@ -88,7 +88,7 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signin")
         
-        return await AF.request(url, method: .post, parameters: parameters)
+        return await AF.request(url, method: .post, encoding: JSONEncoding.default)
                        .validate()
                        .serializingDecodable(SigninNetworkResponseModel.self)
                        .response
@@ -128,7 +128,7 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/map/update")
         
-        return await AF.request(url, method: .post, parameters: parameters)
+        return await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                        .validate()
                        .serializingDecodable(ActiveUserQueryNetworkReponseModel.self)
                        .response
