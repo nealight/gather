@@ -9,7 +9,7 @@ import Foundation
 
 struct ActiveUserNetworkModel: Codable {
     let user_name: String
-    let image: String
-    let x_coordinate: Double
-    let y_coordinate: Double
+    let profile_avatar: String?
+    let my_x_coordinate: Double
+    let my_y_coordinate: Double
 }

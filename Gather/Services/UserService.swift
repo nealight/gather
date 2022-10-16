@@ -88,7 +88,7 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/auth/signin")
         
-        return await AF.request(url, method: .post, encoding: JSONEncoding.default)
+        return await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                        .validate()
                        .serializingDecodable(SigninNetworkResponseModel.self)
                        .response
@@ -122,8 +122,8 @@ class UserService {
         
         let parameters: [String: Any] = [
             "token": token,
-            "my_x_coordinate": myLocation.coordinate.latitude,
-            "my_y_coordinate": myLocation.coordinate.longitude
+            "my_x_coordinate": myLocation.coordinate.longitude,
+            "my_y_coordinate": myLocation.coordinate.latitude
         ]
         
         let url = networkClient.buildURL(uri: "api/map/update")
