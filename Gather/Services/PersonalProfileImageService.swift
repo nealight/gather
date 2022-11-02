@@ -23,5 +23,19 @@ class PersonalProfileImageService: ObservableObject, PersonalProfileImageService
     
     func uploadImage(imageRawData: Data) {
         personalProfileImageData = imageRawData
+        uploadImageWithLink(imageRawData: imageRawData)
+    }
+    
+    private func uploadImageWithLink(imageRawData: Data?) {
+        
+        guard let putURL = UserService.shared.uploadImageURL, let imgData = imageRawData else {
+            return
+        }
+        
+        Task {
+            AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: nil).responseData(completionHandler: {response in
+                debugPrint(response)
+            })
+        }
     }
 }

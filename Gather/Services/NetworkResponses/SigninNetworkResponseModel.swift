@@ -10,5 +10,6 @@ import Foundation
 struct SigninNetworkResponseModel: Codable {
     var message: String
     var user_name: String
+    var uploadImageURL: String?
     var token: String?
 }

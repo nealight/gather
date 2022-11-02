@@ -16,7 +16,7 @@ struct PersonalProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ProfileImageView(imageURL: $personalProfileImageViewModel.profileImageURL.wrappedValue)
+                ProfileImageView(imageURL: nil, content: $personalProfileImageViewModel.profileImage.wrappedValue)
                     .frame(width: 300, height: 300, alignment: .center)
                     .padding()
                 

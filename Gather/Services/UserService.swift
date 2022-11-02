@@ -18,6 +18,7 @@ class UserService {
     let networkClient: NetworkClient
     
     private var userName: String?
+    public var uploadImageURL: String?
     private let refreshInterval = 10.0
     private let refreshTimer: Publishers.Autoconnect<Timer.TimerPublisher>
     @Published var fetchedUsers: [ActiveUserNetworkModel] = []

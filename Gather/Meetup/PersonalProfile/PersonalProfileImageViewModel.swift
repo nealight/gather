@@ -10,7 +10,8 @@ import SwiftUI
 import Combine
 
 class PersonalProfileImageViewModel: ObservableObject {
-    @Published var profileImageURL: URL? = nil
+//    @Published var profileImageURL: URL? = nil
+    @Published var profileImage: Image = Image("default_avatar")
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -26,13 +27,19 @@ class PersonalProfileImageViewModel: ObservableObject {
             guard let uiImage = UIImage(data: data) else {
                 return
             }
+            self.profileImage = Image(uiImage: uiImage)
 
         }.store(in: &cancellableSet)
     }
     
     func updateProfileImage(data: Data) {
         print("Start updating image to cloud server")
+        guard let uiImage = UIImage(data: data) else {
+            return
+        }
+        self.profileImage = Image(uiImage: uiImage)
         profileImageService.uploadImage(imageRawData: data)
     }
     
 }
+
