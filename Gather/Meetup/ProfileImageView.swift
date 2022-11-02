@@ -10,15 +10,20 @@ import SwiftUI
 struct ProfileImageView: View {
     let imageURL: URL?
     var body: some View {
-        if imageURL != nil {
-            AsyncImage(url: imageURL)
-                .scaledToFit()
-                .clipShape(Circle())
-        } else {
-            Image("default_avatar").resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-        }
+        AsyncImage(
+            url: imageURL,
+            content: { image in
+                image.resizable()
+                     .scaledToFit()
+                     .clipShape(Circle())
+            },
+            placeholder: {
+                Image("default_avatar").resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+            }
+        )
+        
     }
 }
 
