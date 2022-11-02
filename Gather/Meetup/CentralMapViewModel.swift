@@ -39,7 +39,14 @@ class CentralMapViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { users in
             for user in users {
-                let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, image: Image("default_avatar"), profileDetailShowable: true)))
+                let userAvatarURL: URL?
+                if let profile_avatar = user.profile_avatar {
+                    userAvatarURL = URL(string: profile_avatar)
+                } else {
+                    userAvatarURL = nil
+                }
+                
+                let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, imageURL: userAvatarURL, profileDetailShowable: true)))
                 self.locations.update(with: newLocation)
             }
         }.store(in: &cancellableSet)

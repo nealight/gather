@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ProfileImageView: View {
-    let image: Image
+    let imageURL: URL?
     var body: some View {
-        image.resizable()
-            .scaledToFit()
-            .clipShape(Circle())
+        if imageURL != nil {
+            AsyncImage(url: imageURL)
+                .scaledToFit()
+                .clipShape(Circle())
+        } else {
+            Image("default_avatar").resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+        }
     }
 }
 
 
 struct ProfileImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileImageView(image: Image("sample_profile"))
+        ProfileImageView(imageURL: nil)
     }
 }

@@ -9,26 +9,26 @@ import SwiftUI
 
 struct ProfileSnapshotView: View {
     let name: String
-    let image: Image
+    let imageURL: URL?
     let profileDetailShowable: Bool
     @State private var showProfile = false
     
     
     var body: some View {
         if profileDetailShowable {
-            ProfileImageView(image: image)
+            ProfileImageView(imageURL: imageURL)
                 .sheet(isPresented: $showProfile, content: {
                     ProfileView(name: name,
-                                profileImageView: .init(image: image))
+                                profileImageView: .init(imageURL: imageURL))
                 })
                 .onTapGesture {
                     showProfile = true
                 }
         } else {
-            ProfileImageView(image: image)
+            ProfileImageView(imageURL: imageURL)
                 .sheet(isPresented: $showProfile, content: {
                     ProfileView(name: name,
-                                profileImageView: .init(image: image))
+                                profileImageView: .init(imageURL: imageURL))
                 })
         }
     }
@@ -37,7 +37,7 @@ struct ProfileSnapshotView: View {
 
 struct ProfileSnapshotView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"), profileDetailShowable: true)
+        ProfileSnapshotView(name: "John Appleseed", imageURL: nil, profileDetailShowable: true)
     }
 }
 

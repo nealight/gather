@@ -23,6 +23,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(name: "John Appleseed", profileImageView: .init(image: Image("sample_profile")))
+        ProfileView(name: "John Appleseed", profileImageView: .init(imageURL: nil))
     }
 }

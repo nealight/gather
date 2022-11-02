@@ -18,7 +18,7 @@ struct MeetupView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
-                ProfileSnapshotView(name: "John Appleseed", image: Image("sample_profile"), profileDetailShowable: false)
+                ProfileSnapshotView(name: "John Appleseed", imageURL: nil, profileDetailShowable: false)
                     .frame(width: 50, height: 50, alignment: .trailing)
                     .sheet(isPresented: $showPersonalProfile, content: {
                         PersonalProfileView()

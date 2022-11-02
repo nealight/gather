@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Alamofire
+import SwiftUI
 
 
 protocol PersonalProfileImageServiceProtocol: ProfileImageServiceProtocol {
@@ -17,6 +18,7 @@ protocol PersonalProfileImageServiceProtocol: ProfileImageServiceProtocol {
 class PersonalProfileImageService: ObservableObject, PersonalProfileImageServiceProtocol {
     @Published var personalProfileImageData: Data?
     static let shared: PersonalProfileImageServiceProtocol = PersonalProfileImageService()
+    static let networkClient = NetworkClient.shared
     var personalProfileImageDataPublisher: Published<Data?>.Publisher { $personalProfileImageData }
     
     func uploadImage(imageRawData: Data) {

@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 class PersonalProfileImageViewModel: ObservableObject {
-    @Published var profileImage: Image = Image("sample_profile")
+    @Published var profileImageURL: URL? = nil
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -26,7 +26,7 @@ class PersonalProfileImageViewModel: ObservableObject {
             guard let uiImage = UIImage(data: data) else {
                 return
             }
-            self.profileImage = Image(uiImage: uiImage)
+
         }.store(in: &cancellableSet)
     }
     
