@@ -12,31 +12,32 @@ struct ProfileSnapshotView: View {
     let imageURL: URL?
     let profileDetailShowable: Bool
     @State private var showProfile = false
-    let content: Image?
+    let profileImageView: ProfileImageView
     
     init(name: String, imageURL: URL?, profileDetailShowable: Bool, content: Image? = nil) {
         self.name = name
         self.imageURL = imageURL
         self.profileDetailShowable = profileDetailShowable
-        self.content = content
+        self.profileImageView = ProfileImageView(imageURL: imageURL, content: content)
     }
+    
     
     
     var body: some View {
         if profileDetailShowable {
-            ProfileImageView(imageURL: imageURL, content: content)
+            profileImageView
                 .sheet(isPresented: $showProfile, content: {
                     ProfileView(name: name,
-                                profileImageView: .init(imageURL: imageURL, content: content))
+                                profileImageView: profileImageView)
                 })
                 .onTapGesture {
                     showProfile = true
                 }
         } else {
-            ProfileImageView(imageURL: imageURL, content: content)
+            profileImageView
                 .sheet(isPresented: $showProfile, content: {
                     ProfileView(name: name,
-                                profileImageView: .init(imageURL: imageURL, content: content))
+                                profileImageView: profileImageView)
                 })
         }
     }
