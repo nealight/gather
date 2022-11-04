@@ -11,7 +11,7 @@ import Combine
 
 class PersonalProfileImageViewModel: ObservableObject {
 //    @Published var profileImageURL: URL? = nil
-    @Published var profileImage: Image = Image("default_avatar")
+    @Published var profileImage: Image? = nil
     
     private var cancellableSet: Set<AnyCancellable> = []
     

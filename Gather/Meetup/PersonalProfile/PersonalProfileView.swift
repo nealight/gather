@@ -10,13 +10,25 @@ import PhotosUI
 
 struct PersonalProfileView: View {
     @State public var selectedItem: PhotosPickerItem? = nil
-    @StateObject private var personalProfileImageViewModel = PersonalProfileImageViewModel()
+    @ObservedObject private var personalProfileImageViewModel: PersonalProfileImageViewModel
     @Environment(\.dismiss) private var dismiss
+    
+    init(personalProfileImageViewModel: PersonalProfileImageViewModel) {
+        self.personalProfileImageViewModel = personalProfileImageViewModel
+    }
+    
+    var imageURL: URL? {
+        if let imageURL = UserService.shared.downloadImageURL {
+            return URL(string: imageURL)
+        } else {
+            return nil
+        }
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                ProfileImageView(imageURL: nil, content: $personalProfileImageViewModel.profileImage.wrappedValue)
+                ProfileImageView(imageURL: imageURL, content: $personalProfileImageViewModel.profileImage.wrappedValue)
                     .frame(width: 300, height: 300, alignment: .center)
                     .padding()
                 
@@ -48,6 +60,6 @@ struct PersonalProfileView: View {
 
 struct PersonalProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalProfileView()
+        PersonalProfileView(personalProfileImageViewModel: .init())
     }
 }

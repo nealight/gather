@@ -32,9 +32,7 @@ struct ProfileImageView: View {
                     }
                 ,
                 placeholder: {
-                    Image("default_avatar").resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
+                    ProgressView()
                 }
             )
         }

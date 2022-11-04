@@ -10,6 +10,14 @@ import SwiftUI
 
 struct MeetupView: View {
     @State private var showPersonalProfile = false
+    var imageURL: URL? {
+        if let imageURL = UserService.shared.downloadImageURL {
+            return URL(string: imageURL)
+        } else {
+            return nil
+        }
+    }
+    @StateObject private var viewModel = MeetupViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -18,10 +26,12 @@ struct MeetupView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
-                ProfileSnapshotView(name: "John Appleseed", imageURL: nil, profileDetailShowable: false)
+                ProfileSnapshotView(name: "", imageURL: imageURL, profileDetailShowable: false, content: self.$viewModel.personalProfileViewModel.profileImage.wrappedValue)
                     .frame(width: 50, height: 50, alignment: .trailing)
-                    .sheet(isPresented: $showPersonalProfile, content: {
-                        PersonalProfileView()
+                    .sheet(isPresented: $showPersonalProfile, onDismiss: {
+                        self.viewModel.reloadView()
+                    }, content: {
+                        PersonalProfileView(personalProfileImageViewModel: self.viewModel.personalProfileViewModel)
                     })
                     .onTapGesture {
                         print("tapped on own personal profile")

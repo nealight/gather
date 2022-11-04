@@ -32,10 +32,9 @@ class PersonalProfileImageService: ObservableObject, PersonalProfileImageService
             return
         }
         
-        Task {
-            AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: nil).responseData(completionHandler: {response in
-                debugPrint(response)
-            })
-        }
+        AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: nil).responseData(completionHandler: {response in
+            debugPrint(response)
+        })
+        
     }
 }

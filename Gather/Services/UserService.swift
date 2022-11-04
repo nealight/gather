@@ -19,6 +19,7 @@ class UserService {
     
     private var userName: String?
     public var uploadImageURL: String?
+    public var downloadImageURL: String?
     private let refreshInterval = 10.0
     private let refreshTimer: Publishers.Autoconnect<Timer.TimerPublisher>
     @Published var fetchedUsers: [ActiveUserNetworkModel] = []
@@ -73,6 +74,8 @@ class UserService {
             // Only store token when status code shows success
             self.token = value.token
             self.userName = value.user_name
+            self.downloadImageURL = value.downloadImageURL
+            self.uploadImageURL = value.uploadImageURL
             
             Task {
                 await self.fetchActiveUsers()
