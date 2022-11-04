@@ -13,7 +13,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                profileImageView.padding()
+                profileImageView.frame(width: 400, height: 400, alignment: .center).padding()
                 Spacer()
                 
             }.navigationBarTitle(name, displayMode: .automatic)

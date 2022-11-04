@@ -25,7 +25,7 @@ struct ProfileSnapshotView: View {
     
     var body: some View {
         if profileDetailShowable {
-            profileImageView
+            ProfileImageView(imageURL: imageURL, placeholder: Image("default_avatar").resizable())
                 .sheet(isPresented: $showProfile, content: {
                     ProfileView(name: name,
                                 profileImageView: profileImageView)

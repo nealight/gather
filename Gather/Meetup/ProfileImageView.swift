@@ -10,10 +10,12 @@ import SwiftUI
 struct ProfileImageView: View {
     let imageURL: URL?
     let content: Image?
+    let placeholder: Image?
     
-    init(imageURL: URL?, content: Image? = nil) {
+    init(imageURL: URL?, content: Image? = nil, placeholder: Image? = nil) {
         self.imageURL = imageURL
         self.content = content
+        self.placeholder = placeholder
     }
     
     var body: some View {
@@ -32,7 +34,11 @@ struct ProfileImageView: View {
                     }
                 ,
                 placeholder: {
-                    ProgressView()
+                    if placeholder != nil {
+                        placeholder.scaledToFit()
+                    } else {
+                        ProgressView().scaledToFit()
+                    }
                 }
             )
         }

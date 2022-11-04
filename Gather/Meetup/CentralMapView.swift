@@ -16,6 +16,9 @@ struct CentralMapView: View {
             location in MapAnnotation(coordinate: location.coordinates) {
                 location.image
                     .frame(width: 30, height: 30)
+                    .scaledToFit()
+                    .clipShape(Circle())
+                
             }
         })
             .cornerRadius(15.0)
