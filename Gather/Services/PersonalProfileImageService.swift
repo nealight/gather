@@ -32,7 +32,11 @@ class PersonalProfileImageService: ObservableObject, PersonalProfileImageService
             return
         }
         
-        AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: nil).responseData(completionHandler: {response in
+        let headers: HTTPHeaders = [
+            "x-ms-blob-type": "BlockBlob",
+        ]
+        
+        AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: headers).responseData(completionHandler: {response in
             debugPrint(response)
         })
         
