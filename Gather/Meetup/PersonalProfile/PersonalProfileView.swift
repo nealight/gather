@@ -15,7 +15,7 @@ struct PersonalProfileView: View {
     @ObservedObject private var personalProfileImageViewModel: PersonalProfileImageViewModel
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
-    
+    @FocusState private var descriptionIsFocused: Bool
     
     
     public var textFieldColor: Color {
@@ -76,8 +76,12 @@ struct PersonalProfileView: View {
                         text: $description,
                         axis: .vertical
                     )
+                    .focused($descriptionIsFocused)
                     .onTapGesture {
-                        proxy.scrollTo(descriptionTextEditorAnchor, anchor: .center)
+                        withAnimation(Animation.easeInOut(duration: 4).delay(1)) {
+                            proxy.scrollTo(descriptionTextEditorAnchor, anchor: .center)
+                        }
+                        
                     }
                     .lineLimit(3)
                     .onSubmit {
@@ -91,6 +95,16 @@ struct PersonalProfileView: View {
                     
                     
                 }.navigationBarTitle(UserService.shared.getUsername(), displayMode: .automatic)
+                    .navigationBarItems(
+                        trailing:
+                            Button(action : {
+                                UserService.shared.updatePersonalProfileDescription(description: description)
+                                self.dismiss()
+                            }) {
+                            Text("Save")
+                        })
+            }.onTapGesture {
+                descriptionIsFocused = false
             }
         }
     }

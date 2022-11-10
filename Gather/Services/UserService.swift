@@ -138,4 +138,8 @@ class UserService {
                        .response
     }
     
+    func updatePersonalProfileDescription(description: String) {
+        return
+    }
+    
 }
