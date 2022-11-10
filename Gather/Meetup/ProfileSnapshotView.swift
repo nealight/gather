@@ -27,7 +27,7 @@ struct ProfileSnapshotView: View {
         if profileDetailShowable {
             ProfileImageView(imageURL: imageURL, placeholder: Image("default_avatar").resizable())
                 .sheet(isPresented: $showProfile, content: {
-                    ProfileView(name: name,
+                    ProfileView(name: name, description: "Description",
                                 profileImageView: profileImageView)
                 })
                 .onTapGesture {
@@ -36,7 +36,7 @@ struct ProfileSnapshotView: View {
         } else {
             profileImageView
                 .sheet(isPresented: $showProfile, content: {
-                    ProfileView(name: name,
+                    ProfileView(name: name, description: "Description",
                                 profileImageView: profileImageView)
                 })
         }

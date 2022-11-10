@@ -9,9 +9,26 @@ import SwiftUI
 import PhotosUI
 
 struct PersonalProfileView: View {
+    @State private var description: String = ""
+
     @State public var selectedItem: PhotosPickerItem? = nil
     @ObservedObject private var personalProfileImageViewModel: PersonalProfileImageViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
+    
+    
+    
+    public var textFieldColor: Color {
+        switch colorScheme {
+            case .light:
+            return lightGreyColor
+            case .dark:
+            return lightGreyColor.opacity(0.2)
+            @unknown default:
+            return lightGreyColor
+        }
+    }
+    
     
     init(personalProfileImageViewModel: PersonalProfileImageViewModel) {
         self.personalProfileImageViewModel = personalProfileImageViewModel
@@ -24,36 +41,57 @@ struct PersonalProfileView: View {
             return nil
         }
     }
+    @Namespace var descriptionTextEditorAnchor
     
     var body: some View {
         NavigationView {
-            VStack {
-                ProfileImageView(imageURL: imageURL, content: $personalProfileImageViewModel.profileImage.wrappedValue)
-                    .frame(width: 300, height: 300, alignment: .center)
-                    .padding()
-                
-                PhotosPicker(
-                    selection: $selectedItem,
-                            matching: .images,
-                            photoLibrary: .shared()) {
-                                Label("Select a photo", systemImage: "photo")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(.blue)
-                                    .cornerRadius(15.0)
-                            }
-                            .onChange(of: selectedItem) { newItem in
-                                Task {
-                                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                        personalProfileImageViewModel.updateProfileImage(data: data)
-                                    }
+            ScrollViewReader { proxy in
+                ScrollView {
+                    ProfileImageView(imageURL: imageURL, content: $personalProfileImageViewModel.profileImage.wrappedValue)
+                        .frame(width: 300, height: 300, alignment: .center)
+                        .padding()
+                    
+                    PhotosPicker(
+                        selection: $selectedItem,
+                        matching: .images,
+                        photoLibrary: .shared()) {
+                            Label("Select a photo", systemImage: "photo")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(.blue)
+                                .cornerRadius(15.0)
+                        }
+                        .onChange(of: selectedItem) { newItem in
+                            Task {
+                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                    personalProfileImageViewModel.updateProfileImage(data: data)
                                 }
                             }
-                
-                Spacer()
-                
-            }.navigationBarTitle(UserService.shared.getUsername(), displayMode: .automatic)
+                        }.padding(.bottom, 20)
+                    
+                    Spacer()
+                    TextField(
+                        "Description of your Profile",
+                        text: $description,
+                        axis: .vertical
+                    )
+                    .onTapGesture {
+                        proxy.scrollTo(descriptionTextEditorAnchor, anchor: .center)
+                    }
+                    .lineLimit(3)
+                    .onSubmit {
+                        print(description)
+                    }
+                    .padding()
+                    .background(lightGreyColor)
+                    .cornerRadius(10.0)
+                    .padding()
+                    .id(descriptionTextEditorAnchor)
+                    
+                    
+                }.navigationBarTitle(UserService.shared.getUsername(), displayMode: .automatic)
+            }
         }
     }
 }
