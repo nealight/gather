@@ -88,7 +88,7 @@ struct PersonalProfileView: View {
                         print(description)
                     }
                     .padding()
-                    .background(lightGreyColor)
+                    .background(textFieldColor)
                     .cornerRadius(10.0)
                     .padding()
                     .id(descriptionTextEditorAnchor)
