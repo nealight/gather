@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct PersonalProfileView: View {
-    @State private var description: String = ""
+    @State private var description: String = UserService.shared.getPersonalDescription()
 
     @State public var selectedItem: PhotosPickerItem? = nil
     @ObservedObject private var personalProfileImageViewModel: PersonalProfileImageViewModel

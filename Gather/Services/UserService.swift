@@ -10,6 +10,7 @@ import Alamofire
 import Combine
 import CoreLocation
 
+let defaultProfileDescription = "This user is a little shy, so they have yet to provide a profile description :>"
 
 class UserService {
     static let shared = UserService()
@@ -18,6 +19,8 @@ class UserService {
     let networkClient: NetworkClient
     
     private var userName: String?
+    private var personalDescription: String?
+    
     public var uploadImageURL: String?
     public var downloadImageURL: String?
     private let refreshInterval = 10.0
@@ -38,6 +41,13 @@ class UserService {
             return "John Appleseed"
         }
         return userName
+    }
+    
+    func getPersonalDescription() -> String {
+        guard let personalDescription = personalDescription else {
+            return defaultProfileDescription
+        }
+        return personalDescription
     }
     
     func configureLocationUpdates() {
@@ -74,6 +84,7 @@ class UserService {
             // Only store token when status code shows success
             self.token = value.token
             self.userName = value.user_name
+            self.personalDescription = value.description
             self.downloadImageURL = value.downloadImageURL
             self.uploadImageURL = value.uploadImageURL
             
@@ -139,7 +150,18 @@ class UserService {
     }
     
     func updatePersonalProfileDescription(description: String) {
-        return
+        guard let token = token else {
+            return
+        }
+        let parameters: [String: Any] = [
+            "token": token,
+            "description": description,
+        ]
+        
+        let url = networkClient.buildURL(uri: "api/profile/updatePersonalDescription")
+        
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: {_ in })
+        
     }
     
 }

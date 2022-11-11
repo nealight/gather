@@ -26,7 +26,7 @@ struct MeetupView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
-                ProfileSnapshotView(name: "", imageURL: imageURL, profileDetailShowable: false, content: self.$viewModel.personalProfileViewModel.profileImage.wrappedValue)
+                ProfileSnapshotView(name: "", description: "", imageURL: imageURL, profileDetailShowable: false, content: self.$viewModel.personalProfileViewModel.profileImage.wrappedValue)
                     .frame(width: 50, height: 50, alignment: .trailing)
                     .fullScreenCover(isPresented: $showPersonalProfile, onDismiss: {
                         self.viewModel.reloadView()

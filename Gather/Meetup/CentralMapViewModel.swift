@@ -46,7 +46,7 @@ class CentralMapViewModel: ObservableObject {
                     userAvatarURL = nil
                 }
                 
-                let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, imageURL: userAvatarURL, profileDetailShowable: true)))
+                let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, description: user.description ?? defaultProfileDescription, imageURL: userAvatarURL, profileDetailShowable: true)))
                 self.locations.update(with: newLocation)
             }
         }.store(in: &cancellableSet)

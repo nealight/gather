@@ -22,4 +22,5 @@ struct ActiveUser: Identifiable, Equatable, Hashable {
     var id: String = UUID().uuidString
     var coordinates: CLLocationCoordinate2D
     var image: ProfileSnapshotView?
+    var description: String?
 }
