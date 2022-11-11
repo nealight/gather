@@ -160,7 +160,9 @@ class UserService {
         
         let url = networkClient.buildURL(uri: "api/profile/updatePersonalDescription")
         
-        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: {_ in })
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: {_ in
+            self.personalDescription = description
+        })
         
     }
     
