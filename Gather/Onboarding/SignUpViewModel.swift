@@ -27,7 +27,7 @@ class SignUpViewModel: ObservableObject {
     @Published var enterLogin = false
     let userService: UserService
     
-    init(userService: UserService = UserService.shared) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
         self.userService = userService
     }
     

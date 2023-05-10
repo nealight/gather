@@ -13,7 +13,7 @@ import CoreLocation
 let defaultProfileDescription = "This user is a little shy, so they have yet to provide a profile description :>"
 
 class UserService {
-    static let shared = UserService()
+    let userServiceQueue = DispatchQueue(label: "UserServiceQueue")
     
     let locationManager = CLLocationManager()
     let networkClient: NetworkClient
@@ -117,7 +117,10 @@ class UserService {
             return
         }
         
-        fetchedUsers = users.activeUsers.filter({ $0.user_name != self.userName })
+        userServiceQueue.async {
+            self.fetchedUsers = users.activeUsers.filter({ $0.user_name != self.userName })
+        }
+        
 //        for user in users.activeUsers {
 //            activeUsers.append(.init(coordinates: .init(latitude: .init(floatLiteral: user.x_coordinate), longitude: .init(floatLiteral: user.y_coordinate))))
 //        }

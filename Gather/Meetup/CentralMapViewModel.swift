@@ -27,7 +27,7 @@ class CentralMapViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     let userService: UserService
     
-    init(userService: UserService = UserService.shared) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
         // For testing
         self.userService = userService
         self.locationManager = self.userService.locationManager

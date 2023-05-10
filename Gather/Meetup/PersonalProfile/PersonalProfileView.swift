@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct PersonalProfileView: View {
-    @State private var description: String = UserService.shared.getPersonalDescription()
+    @State private var description: String = DependencyResolver.shared.resolve(type: UserService.self)!.getPersonalDescription()
 
     @State public var selectedItem: PhotosPickerItem? = nil
     @ObservedObject private var personalProfileImageViewModel: PersonalProfileImageViewModel
@@ -35,7 +35,7 @@ struct PersonalProfileView: View {
     }
     
     var imageURL: URL? {
-        if let imageURL = UserService.shared.downloadImageURL {
+        if let imageURL = DependencyResolver.shared.resolve(type: UserService.self)!.downloadImageURL {
             return URL(string: imageURL)
         } else {
             return nil
@@ -94,11 +94,11 @@ struct PersonalProfileView: View {
                     .id(descriptionTextEditorAnchor)
                     
                     
-                }.navigationBarTitle(UserService.shared.getUsername(), displayMode: .automatic)
+                }.navigationBarTitle(DependencyResolver.shared.resolve(type: UserService.self)!.getUsername(), displayMode: .automatic)
                     .navigationBarItems(
                         trailing:
                             Button(action : {
-                                UserService.shared.updatePersonalProfileDescription(description: description)
+                                DependencyResolver.shared.resolve(type: UserService.self)!.updatePersonalProfileDescription(description: description)
                                 self.dismiss()
                             }) {
                             Text("Save")

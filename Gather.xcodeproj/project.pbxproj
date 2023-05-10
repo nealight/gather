@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C13FEB22A0B3345005C787B /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13FEB12A0B3345005C787B /* DependencyResolver.swift */; };
 		1C1E7B5328D12BCD00A50197 /* ProfileImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E7B5228D12BCD00A50197 /* ProfileImageService.swift */; };
 		1C5FBE7328D9223100DD4984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FBE7228D9223100DD4984 /* README.md */; };
 		1C5FFF2D29134E09006BCDBE /* MeetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FFF2C29134E09006BCDBE /* MeetupViewModel.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C13FEB12A0B3345005C787B /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
 		1C1E7B5228D12BCD00A50197 /* ProfileImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageService.swift; sourceTree = "<group>"; };
 		1C5FBE7228D9223100DD4984 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1C5FFF2C29134E09006BCDBE /* MeetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		1C961ED528CE429A0090D399 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1C13FEB12A0B3345005C787B /* DependencyResolver.swift */,
 				1CC68A3628D7ABA100F5C93E /* ServiceResponses */,
 				1CEBE56628D51A4000E8C11F /* NetworkResponses */,
 				1CB3695B28CD76F800F66A26 /* NetworkClient.swift */,
@@ -400,6 +403,7 @@
 				1CC68A3828D7ACC800F5C93E /* SigninServiceResponse.swift in Sources */,
 				1CC68A3328D7A08B00F5C93E /* SigninNetworkResponseModel.swift in Sources */,
 				1CE1418128D00FAE00085A9F /* PersonalProfileView.swift in Sources */,
+				1C13FEB22A0B3345005C787B /* DependencyResolver.swift in Sources */,
 				1C961EDB28CE46C10090D399 /* MeetupView.swift in Sources */,
 				1CB3695728CD747000F66A26 /* UserService.swift in Sources */,
 				1CB3695C28CD76F800F66A26 /* NetworkClient.swift in Sources */,

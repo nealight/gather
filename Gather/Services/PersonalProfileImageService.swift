@@ -28,7 +28,7 @@ class PersonalProfileImageService: ObservableObject, PersonalProfileImageService
     
     private func uploadImageWithLink(imageRawData: Data?) {
         
-        guard let putURL = UserService.shared.uploadImageURL, let imgData = imageRawData else {
+        guard let putURL = DependencyResolver.shared.resolve(type: UserService.self)!.uploadImageURL, let imgData = imageRawData else {
             return
         }
         
