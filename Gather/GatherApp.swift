@@ -14,4 +14,8 @@ struct GatherApp: App {
             SignUpView()
         }
     }
+    
+    init() {
+        DependencyResolver.shared.register(type: UserService.self, service: UserService())
+    }
 }

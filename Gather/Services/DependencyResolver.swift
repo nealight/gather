@@ -10,9 +10,7 @@ import Foundation
 class DependencyResolver {
     static let shared = DependencyResolver()
     
-    private init() {
-        self.register(type: UserService.self, service: UserService())
-    }
+    private init() {}
     
     var services: Dictionary<String, Any> = [:]
     
