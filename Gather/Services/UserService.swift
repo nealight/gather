@@ -89,7 +89,7 @@ class UserService {
             self.uploadImageURL = value.uploadImageURL
             
             Task {
-                await self.fetchActiveUsers()
+                await self.fetchActiveUsers() 
             }
         }
         return SigninServiceResponseModel(message: value.message)
