@@ -22,7 +22,6 @@ class CentralMapViewModel: ObservableObject {
                     )
     
     @Published var locations: Set<ActiveUser> = []
-    @Published var updateHappened = false
 
     let locationManager: CLLocationManager
     private var cancellableSet: Set<AnyCancellable> = []
@@ -87,7 +86,7 @@ class CentralMapViewModel: ObservableObject {
                 latitudeDelta: 0.03,
                 longitudeDelta: 0.03)
             )
-        updateHappened = !updateHappened
+        self.objectWillChange.send()
     }
     
 }
