@@ -190,8 +190,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
@@ -253,8 +253,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "_signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -269,8 +269,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "UserService"
             landmarkType = "3">
          </BreakpointContent>
@@ -301,8 +301,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -317,8 +317,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "_fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -333,8 +333,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -349,8 +349,8 @@
             filePath = "Gather/Meetup/CentralMapViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "configureUserUpdates()"
             landmarkType = "7">
          </BreakpointContent>
@@ -413,8 +413,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
             <Locations>
@@ -454,22 +454,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE68EC8B-A0D3-4CB7-A042-53AA72216A9B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/CentralMapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "configureUserUpdates()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2ABE5829-086C-4C93-A527-F70CF358005A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -477,9 +461,9 @@
             filePath = "Gather/Meetup/CentralMapViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "configureUserUpdates()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "init(userService:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -493,8 +477,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -509,8 +493,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -525,8 +509,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
             <Locations>
@@ -588,8 +572,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "signinAccount(usernameText:passwordText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -604,8 +588,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "_fetchActiveUsers()"
             landmarkType = "7">
             <Locations>
@@ -652,8 +636,8 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "fetchActiveUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1124,40 +1108,275 @@
             filePath = "Gather/Services/UserService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "updatePersonalProfileDescription(description:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - 7f26784ed0630124"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "162"
-                  endingLineNumber = "162"
-                  offsetFromSymbolStart = "520">
-               </Location>
-               <Location
-                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - d6282b1254d0462a"
+                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - a0054b9605ad14ed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
                   moduleName = "Gather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/CS%205412/Gather/Gather/Services/UserService.swift"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "162"
-                  endingLineNumber = "162"
-                  offsetFromSymbolStart = "12">
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - 90b18ca811e53e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - a0054b9605ad14cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - 90b18ca811e5115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  uuid = "484EA3FE-A282-403D-8297-14792604D860 - a0054b9605ad167a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Gather.UserService.updatePersonalProfileDescription(description: Swift.String) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BDD3F30-D56F-4F56-A21A-05A041F6AFBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "registerAccount(usernameText:passwordText:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40FA3FBE-4459-4652-A0E2-588A8A86A042"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "registerAccount(usernameText:passwordText:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40FA3FBE-4459-4652-A0E2-588A8A86A042 - 988210837764c085"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String, completionHandler: (Gather.SignupNetworkResponseModel) -&gt; ()) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1548">
+               </Location>
+               <Location
+                  uuid = "40FA3FBE-4459-4652-A0E2-588A8A86A042 - cc145b58850ee543"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String, completionHandler: (Gather.SignupNetworkResponseModel) -&gt; ()) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63FF8375-E040-4401-8669-9340EC2D3FD8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Services/UserService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "registerAccount(usernameText:passwordText:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "63FF8375-E040-4401-8669-9340EC2D3FD8 - 988210837764c0db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String, completionHandler: (Gather.SignupNetworkResponseModel) -&gt; ()) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1356">
+               </Location>
+               <Location
+                  uuid = "63FF8375-E040-4401-8669-9340EC2D3FD8 - 988210837764c0db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String, completionHandler: (Gather.SignupNetworkResponseModel) -&gt; ()) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1360">
+               </Location>
+               <Location
+                  uuid = "63FF8375-E040-4401-8669-9340EC2D3FD8 - 9b6befe97d1b48b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.UserService.registerAccount(usernameText: Swift.String, passwordText: Swift.String, completionHandler: (Gather.URLDataResponse&lt;Gather.SignupNetworkResponseModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Services/UserService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Meetup/CentralMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53 - f1a669e0c9d4f928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.CentralMapView.body.getter : some"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53 - 65a1168d2c51ed26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Gather.ActiveUser) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;&lt;&lt;opaque return type of SwiftUI.View.clipShape&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.Shape&gt;(_: &#x3c4;_1_0, style: SwiftUI.FillStyle) -&gt; some&gt;&gt;.0&gt; in Gather.CentralMapView.body.getter : some"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53 - f1a669e0c9d4f928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.CentralMapView.body.getter : some"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "480">
                </Location>
             </Locations>
          </BreakpointContent>

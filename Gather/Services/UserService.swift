@@ -58,19 +58,37 @@ class UserService {
         }.store(in: &cancellableSet)
     }
     
-    func registerAccount(usernameText: String, passwordText: String) async -> DataResponse<SignupNetworkResponseModel, AFError> {
+    func registerAccount(usernameText: String, passwordText: String, completionHandler: @escaping (URLDataResponse<SignupNetworkResponseModel>) -> Void){
         
         let parameters: [String: String] = [
             "user_name": usernameText,
             "password": passwordText
         ]
+        let queryItems: [URLQueryItem] = parameters.map() {key, value in  URLQueryItem(name: key, value: value)
+        }
         
-        let url = networkClient.buildURL(uri: "api/auth/signup")
-        
-        return await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                       .validate()
-                       .serializingDecodable(SignupNetworkResponseModel.self)
-                       .response
+        var url = URL(string: networkClient.buildURL(uri: "api/auth/signup"))!
+        url.append(queryItems: queryItems)
+        let request = try! URLRequest(url: url, method: .post)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completionHandler(URLDataResponse<SignupNetworkResponseModel>(error: error, value: nil))
+                }
+            }
+            do {
+                let result = try JSONDecoder().decode(SignupNetworkResponseModel.self, from: data!)
+                DispatchQueue.main.async {
+                    completionHandler(URLDataResponse<SignupNetworkResponseModel>(error: nil, value: result))
+                }
+            } catch let error {
+                DispatchQueue.main.async {
+                    completionHandler(URLDataResponse<SignupNetworkResponseModel>(error: error, value: nil))
+                }
+            }
+            
+        }
+        task.resume()
     }
     
     func signinAccount(usernameText: String, passwordText: String) async -> SigninServiceResponseModel {

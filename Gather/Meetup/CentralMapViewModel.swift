@@ -12,7 +12,7 @@ import SwiftUI
 import Combine
 
 class CentralMapViewModel: ObservableObject {
-    @Published var region = MKCoordinateRegion(
+    var region = MKCoordinateRegion(
                     center: CLLocationCoordinate2D(
                         latitude: 42.4534,
                         longitude: -76.4735),
@@ -22,6 +22,7 @@ class CentralMapViewModel: ObservableObject {
                     )
     
     @Published var locations: Set<ActiveUser> = []
+    @Published var updateHappened = false
 
     let locationManager: CLLocationManager
     private var cancellableSet: Set<AnyCancellable> = []
@@ -86,6 +87,7 @@ class CentralMapViewModel: ObservableObject {
                 latitudeDelta: 0.03,
                 longitudeDelta: 0.03)
             )
+        updateHappened = !updateHappened
     }
     
 }
