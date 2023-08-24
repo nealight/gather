@@ -14,8 +14,8 @@
             filePath = "Gather/Meetup/MeetupView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "23EE3B5C-9047-4A3E-AB12-DF18CEA757F2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gather/Onboarding/SignInViewModel.swift"
@@ -342,22 +342,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "762E335B-F582-42FF-8EC3-69354F57D9E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/CentralMapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "configureUserUpdates()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B2EDBEC1-A241-4438-AA9D-854074E95535"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -449,22 +433,6 @@
                   offsetFromSymbolStart = "44">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2ABE5829-086C-4C93-A527-F70CF358005A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/CentralMapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "init(userService:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -732,8 +700,8 @@
             filePath = "Gather/Meetup/MeetupView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -748,8 +716,8 @@
             filePath = "Gather/Meetup/MeetupViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "MeetupViewModel"
             landmarkType = "3">
             <Locations>
@@ -909,22 +877,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2B73B961-4105-4650-9EF2-3A61FE09BD16"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/MeetupViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "MeetupViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "22C1CCA7-1B1B-4F7A-93C9-DBBB4B971963"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -932,8 +884,8 @@
             filePath = "Gather/Meetup/MeetupViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "reloadView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -948,8 +900,8 @@
             filePath = "Gather/Meetup/MeetupView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1322,15 +1274,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gather/Meetup/CentralMapView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "body"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "previews"
             landmarkType = "24">
             <Locations>
                <Location
@@ -1378,7 +1330,133 @@
                   endingLineNumber = "24"
                   offsetFromSymbolStart = "480">
                </Location>
+               <Location
+                  uuid = "D762235A-220F-4075-AC3D-8CE9E85CCD53 - f1a669e0c9d4f928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.CentralMapView.body.getter : some"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1268">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58FBDC5F-5E5A-4CE5-9D2D-2AA88DF2A281"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Meetup/CentralMapViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "updateUserLocation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64713387-9C05-4AFA-B7EF-9C99B7BB4B44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Meetup/MeetupView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "984C1AEC-5757-4783-98E7-A4859DDA4996"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Meetup/CentralMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "984C1AEC-5757-4783-98E7-A4859DDA4996 - 912df5db41e3d759"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.CentralMapView.init(locations: Swift.Set&lt;Gather.ActiveUser&gt;, region: __C.MKCoordinateRegion) -&gt; Gather.CentralMapView"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "984C1AEC-5757-4783-98E7-A4859DDA4996 - 912df5db41e3d6be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gather.CentralMapView.init(locations: Swift.Set&lt;Gather.ActiveUser&gt;, region: __C.MKCoordinateRegion) -&gt; Gather.CentralMapView"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "984C1AEC-5757-4783-98E7-A4859DDA4996 - 65a1168d2c51ee85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Gather.ActiveUser) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;&lt;&lt;opaque return type of SwiftUI.View.clipShape&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.Shape&gt;(_: &#x3c4;_1_0, style: SwiftUI.FillStyle) -&gt; some&gt;&gt;.0&gt; in Gather.CentralMapView.body.getter : some"
+                  moduleName = "Gather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/CentralMapView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09EF9D8C-BF9F-4FFD-9345-4FA411123E6C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gather/Meetup/CentralMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(location:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

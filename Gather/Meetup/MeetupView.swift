@@ -39,7 +39,7 @@ struct MeetupView: View {
                     }
 
             }.padding()
-            CentralMapView()
+            CentralMapView(location: viewModel.locations)
             Spacer()
         }
     }
