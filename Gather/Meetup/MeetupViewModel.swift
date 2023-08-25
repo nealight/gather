@@ -33,7 +33,7 @@ class MeetupViewModel: ObservableObject {
     
     func configureUserUpdates() {
         self.userService.$fetchedUsers
-            .receive(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.global(qos: .userInitiated))
             .sink { users in
                 self.downloadedLocations = []
                 for user in users {
@@ -49,6 +49,7 @@ class MeetupViewModel: ObservableObject {
                     
                     self.userService.downloadDataFromURL(url: userAvatarURL) { [weak self] data in
                         guard let data = data else {
+                            self?.imageDownloadDispatchGroup.leave()
                             return
                         }
                         let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, description: user.description ?? defaultProfileDescription, imageURL: nil, profileDetailShowable: true, content: Image(uiImage: .init(data: data)!))))
@@ -61,9 +62,7 @@ class MeetupViewModel: ObservableObject {
                     //                self.locations.update(with: newLocation)
                 }
                 self.imageDownloadDispatchGroup.notify(queue: .main) {
-                    self.downloadedLocations.forEach { location in
-                        self.locations.update(with: location)
-                    }
+                    self.locations = self.downloadedLocations
                 }
             }.store(in: &cancellableSet)
     }
