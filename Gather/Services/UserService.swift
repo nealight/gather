@@ -17,7 +17,8 @@ class UserService {
     
     let locationManager = CLLocationManager()
     let networkClient: NetworkClient
-    let imageCache: Dictionary<URL?, Data?> = [nil: nil, ]
+    var imageCache: Dictionary<URL?, Data?> = [nil: nil, ]
+    let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue())
     
     private var userName: String?
     private var personalDescription: String?
@@ -195,10 +196,13 @@ class UserService {
         }
         
         let request = URLRequest(url: url!)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = urlSession.dataTask(with: request) { [url] (data, response, error) in
             if let error = error, data == nil {
                 NSLog(error.localizedDescription)
                 return
+            }
+            self.userServiceQueue.async {
+                self.imageCache[url!] = data!
             }
             completionHandler(data!)
         }

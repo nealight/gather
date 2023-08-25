@@ -19,7 +19,6 @@ class MeetupViewModel: ObservableObject {
         objectWillChange.send()
     }
     
-    
     private var cancellableSet: Set<AnyCancellable> = []
     let userService: UserService
     @Published var locations: Set<ActiveUser> = []
@@ -33,7 +32,7 @@ class MeetupViewModel: ObservableObject {
     
     func configureUserUpdates() {
         self.userService.$fetchedUsers
-            .receive(on: DispatchQueue.global(qos: .userInitiated))
+            .receive(on: DispatchQueue.main)
             .sink { users in
                 self.downloadedLocations = []
                 for user in users {
@@ -53,8 +52,12 @@ class MeetupViewModel: ObservableObject {
                             return
                         }
                         let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, description: user.description ?? defaultProfileDescription, imageURL: nil, profileDetailShowable: true, content: Image(uiImage: .init(data: data)!))))
-                        self?.downloadedLocations.insert(newLocation)
-                        self?.imageDownloadDispatchGroup.leave()
+                        
+                        DispatchQueue.main.async {
+                            self?.downloadedLocations.insert(newLocation)
+                            self?.imageDownloadDispatchGroup.leave()
+                        }
+                        
                     }
                     
                     
