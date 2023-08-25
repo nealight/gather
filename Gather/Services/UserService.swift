@@ -17,6 +17,7 @@ class UserService {
     
     let locationManager = CLLocationManager()
     let networkClient: NetworkClient
+    let imageCache: Dictionary<URL?, Data?> = [nil: nil, ]
     
     private var userName: String?
     private var personalDescription: String?
@@ -188,12 +189,12 @@ class UserService {
     }
     
     func downloadDataFromURL(url: URL?, completionHandler: @escaping (Data?) -> ()) {
-        guard let url = url else {
-            completionHandler(nil)
+        if let cachedData = imageCache[url] {
+            completionHandler(cachedData)
             return
         }
         
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: url!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error, data == nil {
                 NSLog(error.localizedDescription)
