@@ -187,4 +187,20 @@ class UserService {
         
     }
     
+    func downloadDataFromURL(url: URL?, completionHandler: @escaping (Data?) -> ()) {
+        guard let url = url else {
+            completionHandler(nil)
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error, data == nil {
+                NSLog(error.localizedDescription)
+                return
+            }
+            completionHandler(data!)
+        }
+        task.resume()
+    }
 }
