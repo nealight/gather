@@ -34,7 +34,7 @@ struct MeetupView: View {
                         PersonalProfileView(personalProfileImageViewModel: self.viewModel.personalProfileViewModel)
                     })
                     .onTapGesture {
-                        print("tapped on own personal profile")
+                        NSLog("tapped on own personal profile")
                         showPersonalProfile = true
                     }
 
