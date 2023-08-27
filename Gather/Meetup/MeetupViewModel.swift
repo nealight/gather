@@ -33,36 +33,42 @@ class MeetupViewModel: ObservableObject {
         self.userService.$fetchedUsers
             .receive(on: DispatchQueue.main)
             .sink { users in
-                var downloadedLocations = [ActiveUser]()
-                for user in users {
-                    self.imageDownloadDispatchGroup.enter()
-                    let userAvatarURL: URL? = {
-                        if let profile_avatar = user.profile_avatar {
-                            return URL(string: profile_avatar)
-                        } else {
-                            return nil
-                        }
-                    }()
-                    
-                    self.userService.downloadDataFromURL(url: userAvatarURL) { [weak self] data in
-                        guard let data = data else {
-                            self?.imageDownloadDispatchGroup.leave()
-                            return
-                        }
-                        let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, description: user.description ?? defaultProfileDescription, imageURL: nil, profileDetailShowable: true, content: Image(uiImage: .init(data: data)!))))
-                        
-                        DispatchQueue.main.async {
-                            downloadedLocations.append(newLocation)
-                            self?.imageDownloadDispatchGroup.leave()
-                        }
-                        
-                    }
-                }
-                self.imageDownloadDispatchGroup.notify(queue: .main) { [weak self] in
-                    downloadedLocations.forEach() { location in
-                        self?.locations.insert(location)
-                    }
-                }
-            }.store(in: &cancellableSet)
+                self._configureUserUpdates(users: users)
+            }
+            .store(in: &cancellableSet)
+            
+    }
+        
+    func _configureUserUpdates(users: [ActiveUserNetworkModel]) {
+           var downloadedLocations = [ActiveUser]()
+           for user in users {
+               self.imageDownloadDispatchGroup.enter()
+               let userAvatarURL: URL? = {
+                   if let profile_avatar = user.profile_avatar {
+                       return URL(string: profile_avatar)
+                   } else {
+                       return nil
+                   }
+               }()
+               
+               self.userService.downloadDataFromURL(url: userAvatarURL) { [weak self] data in
+                   guard let data = data else {
+                       self?.imageDownloadDispatchGroup.leave()
+                       return
+                   }
+                   let newLocation: ActiveUser = (.init(id: user.user_name,coordinates: .init(latitude: .init(floatLiteral: user.my_y_coordinate), longitude: .init(floatLiteral: user.my_x_coordinate)), image: ProfileSnapshotView(name: user.user_name, description: user.description ?? defaultProfileDescription, imageURL: nil, profileDetailShowable: true, content: Image(uiImage: .init(data: data)!))))
+                   
+                   DispatchQueue.main.async {
+                       downloadedLocations.append(newLocation)
+                       self?.imageDownloadDispatchGroup.leave()
+                   }
+                   
+               }
+           }
+           self.imageDownloadDispatchGroup.notify(queue: .main) { [weak self] in
+               downloadedLocations.forEach() { location in
+                   self?.locations.insert(location)
+               }
+           }
     }
 }

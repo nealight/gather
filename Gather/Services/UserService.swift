@@ -38,7 +38,7 @@ class UserService: UserServiceProvider {
     
     init(networkClient: NetworkClient = NetworkClient.shared) {
         self.networkClient = networkClient
-        self.refreshTimer = Timer.publish(every: refreshInterval, tolerance: 0.5, on: .main, in: .common).autoconnect()
+        self.refreshTimer = Timer.publish(every: refreshInterval, tolerance: 0.5, on: .current, in: .default).autoconnect()
         configureLocationUpdates()
         urlSession.delegateQueue.maxConcurrentOperationCount = 5
     }

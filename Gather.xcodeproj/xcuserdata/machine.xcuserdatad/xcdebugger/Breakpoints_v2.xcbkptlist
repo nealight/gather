@@ -1974,84 +1974,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "611DD6BD-465E-4704-B37C-25053034957D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/MeetupViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "configureUserUpdates()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "611DD6BD-465E-4704-B37C-25053034957D - 2606862386b05dbd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in closure #1 (Swift.Array&lt;Gather.ActiveUserNetworkModel&gt;) -&gt; () in Gather.MeetupViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/MeetupViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "508">
-               </Location>
-               <Location
-                  uuid = "611DD6BD-465E-4704-B37C-25053034957D - 2606862386b05dde"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in closure #1 (Swift.Array&lt;Gather.ActiveUserNetworkModel&gt;) -&gt; () in Gather.MeetupViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/MeetupViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "588">
-               </Location>
-               <Location
-                  uuid = "611DD6BD-465E-4704-B37C-25053034957D - 2606862386b05dde"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in closure #1 (Swift.Array&lt;Gather.ActiveUserNetworkModel&gt;) -&gt; () in Gather.MeetupViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/MeetupViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "756">
-               </Location>
-               <Location
-                  uuid = "611DD6BD-465E-4704-B37C-25053034957D - 2606862386b05218"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in closure #1 (Swift.Array&lt;Gather.ActiveUserNetworkModel&gt;) -&gt; () in Gather.MeetupViewModel.configureUserUpdates() -&gt; ()"
-                  moduleName = "Gather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/machine/Desktop/Archive/CS%205412/Gather/Gather/Meetup/MeetupViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "628">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "563903A6-A7BA-46AB-AE0A-61F8939947E6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -2464,38 +2386,6 @@
                   offsetFromSymbolStart = "164">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "083DF93E-45D5-41AA-B714-57CDC556F6BA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/MeetupViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "configureUserUpdates()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "454591BF-B166-42D2-AB79-A1C727E03E29"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gather/Meetup/MeetupViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "configureUserUpdates()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
