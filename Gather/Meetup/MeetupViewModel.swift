@@ -23,7 +23,7 @@ class MeetupViewModel: ObservableObject {
     let userService: UserService
     @Published var locations: Set<ActiveUser> = []
     
-    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)) {
         // For testing
         self.userService = userService
         configureUserUpdates()

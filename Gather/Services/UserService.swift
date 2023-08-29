@@ -174,14 +174,10 @@ class UserService: UserServiceProvider {
                 }
             }
             
-            do {
-                let result = try JSONDecoder().decode(ActiveUserQueryNetworkReponseModel.self, from: data!)
+
+            if let result = try? JSONDecoder().decode(ActiveUserQueryNetworkReponseModel.self, from: data!) {
                 self.userServiceQueue.async {
                     completionHandler(.init(value: result))
-                }
-            } catch let error {
-                self.userServiceQueue.async {
-                    completionHandler(.init(error: error))
                 }
             }
         }

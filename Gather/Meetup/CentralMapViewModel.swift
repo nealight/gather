@@ -25,7 +25,7 @@ class CentralMapViewModel: ObservableObject {
     let userService: UserService
     let locationManager: CLLocationManager
     
-    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)) {
         // For testing
         self.userService = userService
         self.locationManager = self.userService.locationManager

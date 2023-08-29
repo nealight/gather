@@ -18,7 +18,7 @@ class DependencyResolver {
         services["\(type)"] = service
     }
     
-    func resolve<Service>(type: Service.Type) -> Service? {
-        return services["\(type)"] as? Service
+    func resolve<Service>(type: Service.Type) -> Service {
+        return services["\(type)"] as! Service
     }
 }

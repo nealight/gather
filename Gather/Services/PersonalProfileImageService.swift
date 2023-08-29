@@ -7,16 +7,14 @@
 
 import Foundation
 import Combine
-import Alamofire
 import SwiftUI
-
 
 protocol PersonalProfileImageServiceProtocol: ProfileImageServiceProtocol {
     func uploadImage(imageRawData: Data)
 }
 
 class PersonalProfileImageService: ObservableObject, PersonalProfileImageServiceProtocol {
-    @Published var personalProfileImageData: Data?
+    @Published var personalProfileImageData: Data!
     static let shared: PersonalProfileImageServiceProtocol = PersonalProfileImageService()
     static let networkClient = NetworkClient.shared
     var personalProfileImageDataPublisher: Published<Data?>.Publisher { $personalProfileImageData }
@@ -26,19 +24,28 @@ class PersonalProfileImageService: ObservableObject, PersonalProfileImageService
         uploadImageWithLink(imageRawData: imageRawData)
     }
     
-    private func uploadImageWithLink(imageRawData: Data?) {
+    private func uploadImageWithLink(imageRawData: Data) {
         
-        guard let putURL = DependencyResolver.shared.resolve(type: UserService.self)!.uploadImageURL, let imgData = imageRawData else {
+        guard let putURL = URL(string: DependencyResolver.shared.resolve(type: UserService.self).uploadImageURL ?? "") else {
             return
         }
         
-        let headers: HTTPHeaders = [
+        let headers = [
             "x-ms-blob-type": "BlockBlob",
         ]
         
-        AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: headers).responseData(completionHandler: {response in
-            debugPrint(response)
-        })
+        let request = try! URLRequest(url: putURL, method: .put, headers: .init(headers))
+        let task = URLSession.shared.uploadTask(with: request, from: imageRawData) { _, _, error in
+            if let error = error {
+                NSLog(error.localizedDescription)
+            }
+        }
+        task.resume()
+        
+        
+//        AF.upload(imgData, to: URL(string: putURL)!, method: .put, headers: headers).responseData(completionHandler: {response in
+//            debugPrint(response)
+//        })
         
     }
 }

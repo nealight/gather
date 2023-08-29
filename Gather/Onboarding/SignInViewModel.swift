@@ -31,7 +31,7 @@ class SignInViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     let userService: UserService
     
-    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)) {
         self.userService = userService
     }
     
