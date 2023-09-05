@@ -16,6 +16,7 @@ struct GatherApp: App {
     }
     
     init() {
+        DependencyResolver.shared.register(type: UserServiceProvider.self, service: UserService())
         DependencyResolver.shared.register(type: UserService.self, service: UserService())
     }
 }

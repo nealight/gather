@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 class NetworkClient {
     let remoteDomain = "https://be823c7f-d539-431d-b953-9bd95d5b2851.mock.pstmn.io/"

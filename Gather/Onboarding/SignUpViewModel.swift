@@ -27,19 +27,16 @@ class SignUpViewModel: ObservableObject {
     @Published var enterLogin = false
     let userService: UserService
     
-    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)!) {
+    init(userService: UserService = DependencyResolver.shared.resolve(type: UserService.self)) {
         self.userService = userService
     }
     
-    @MainActor
     func signUpUser(username: String, password: String) {
-        Task {
-            let dataResponse = await userService.registerAccount(usernameText: username, passwordText: password)
-            
+        userService.registerAccount(usernameText: username, passwordText: password) { dataResponse in
             if dataResponse.error != nil {
                 self.signUpError = .error
             } else {
-                let message = dataResponse.value?.message
+                let message = dataResponse.getDataModel().message
                 if message == "ok" {
                     self.enterLogin = true
                 } else if message == "duplicate user" {

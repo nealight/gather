@@ -11,7 +11,7 @@ import SwiftUI
 struct MeetupView: View {
     @State private var showPersonalProfile = false
     var imageURL: URL? {
-        if let imageURL = DependencyResolver.shared.resolve(type: UserService.self)!.downloadImageURL {
+        if let imageURL = DependencyResolver.shared.resolve(type: UserService.self).downloadImageURL {
             return URL(string: imageURL)
         } else {
             return nil
@@ -22,7 +22,7 @@ struct MeetupView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text(DependencyResolver.shared.resolve(type: UserService.self)!.getUsername())
+                Text(DependencyResolver.shared.resolve(type: UserService.self).getUsername())
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
@@ -34,12 +34,12 @@ struct MeetupView: View {
                         PersonalProfileView(personalProfileImageViewModel: self.viewModel.personalProfileViewModel)
                     })
                     .onTapGesture {
-                        print("tapped on own personal profile")
+                        NSLog("tapped on own personal profile")
                         showPersonalProfile = true
                     }
 
             }.padding()
-            CentralMapView()
+            CentralMapView(location: viewModel.locations)
             Spacer()
         }
     }

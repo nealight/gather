@@ -17,9 +17,11 @@ struct ActiveUser: Identifiable, Equatable, Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+        hasher.combine(coordinates.latitude)
+        hasher.combine(coordinates.longitude)
     }
     
-    var id: String = UUID().uuidString
+    var id: String = "unamed user"
     var coordinates: CLLocationCoordinate2D
     var image: ProfileSnapshotView?
     var description: String?

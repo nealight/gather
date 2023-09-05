@@ -10,9 +10,14 @@ import MapKit
 
 struct CentralMapView: View {
     @StateObject private var viewModel = CentralMapViewModel()
+    private var locations: Set<ActiveUser>
+    
+    init(location: Set<ActiveUser>) {
+        self.locations = location
+    }
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: Array(viewModel.locations), annotationContent: {
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: Array(locations), annotationContent: {
             location in MapAnnotation(coordinate: location.coordinates) {
                 location.image
                     .frame(width: 30, height: 30)
@@ -29,6 +34,6 @@ struct CentralMapView: View {
 
 struct GatherMapView_Previews: PreviewProvider {
     static var previews: some View {
-        CentralMapView()
+        CentralMapView(location: [])
     }
 }
